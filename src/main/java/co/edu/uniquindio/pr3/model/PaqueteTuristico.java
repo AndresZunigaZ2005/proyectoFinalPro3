@@ -3,6 +3,7 @@ package co.edu.uniquindio.pr3.model;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 @Getter
 @Setter
@@ -19,4 +20,5 @@ public class PaqueteTuristico {
     private double precio;
     private int cupoMaximo;
     private LocalDate fecha;
+    private ArrayList<Destino> listaDestinos;
 }

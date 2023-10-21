@@ -55,12 +55,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-graphics</artifactId>
-            <version>21-ea+17</version>
-        </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.danekja/jdk-serializable-functional -->
         <dependency>
             <groupId>org.danekja</groupId>
@@ -74,6 +68,14 @@
             <artifactId>javax.mail-api</artifactId>
             <version>1.6.2</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.1.0</version>
+        </dependency>
+
     </dependencies>
 
 </project>

@@ -3,7 +3,7 @@ package co.edu.uniquindio.pr3.model;
 import lombok.*;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -15,9 +15,10 @@ import java.util.ArrayList;
 public class Reserva {
 
     private LocalDate fechaSolicitud;
-    private LocalDate fechaViaje;
+    private LocalDateTime fechaViaje;
     private int cantPersonas;
     private Cliente clienteReserva;
     private PaqueteTuristico paqueteTuristico;
+    private GuiaTuristico guiaTuristico;
     private EstadoReserva estadoReserva;
 }

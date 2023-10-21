@@ -2,6 +2,7 @@ package co.edu.uniquindio.pr3.model;
 
 import lombok.*;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 @Getter
@@ -11,7 +12,7 @@ import java.util.ArrayList;
 @ToString
 @EqualsAndHashCode
 @Builder
-public class Destino {
+public class Destino implements Serializable {
 
     private String nombre;
     private String ciudad;
