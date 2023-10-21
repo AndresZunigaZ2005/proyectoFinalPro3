@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class PruebaController {
+public class PruebaController implements Propiedades.Traducible, Initializable {
 
     @FXML
     private Button btnPrueba;
