@@ -1,33 +1,36 @@
 package co.edu.uniquindio.pr3.controllers;
-import javafx.event.ActionEvent;
+
+
+import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.stage.Stage;
+import javafx.scene.image.ImageView;
+import javafx.util.Duration;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+public class PruebaController {
+    @FXML
+    private ImageView imageView;
 
-public class PruebaController implements Propiedades.Traducible, Initializable {
+    private boolean isMouseOver = false;
 
     @FXML
-    private Button btnPrueba;
+    void handleMouseEntered() {
+        if (!isMouseOver) {
+            isMouseOver = true;
+            TranslateTransition transition = new TranslateTransition(Duration.millis(500), imageView);
+            transition.setByY(-25); // Cambia la posición vertical para centrar la imagen
+            transition.setOnFinished(event -> imageView.setVisible(true));
+            transition.play();
+        }
+    }
 
     @FXML
-    void accionarPrueba(ActionEvent event) {
-
-    }
-
-    public void setStage(Stage primaryStage) {
-    }
-
-    @Override
-    public void cambiarIdioma(ResourceBundle bundle) {
-        btnPrueba.setText(bundle.getString("btn"));
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        Propiedades.getInstance().addListener(this);
+    void handleMouseExited() {
+        if (isMouseOver) {
+            isMouseOver = false;
+            imageView.setVisible(false);
+            imageView.setTranslateY(0);
+        }
     }
 }
+
+

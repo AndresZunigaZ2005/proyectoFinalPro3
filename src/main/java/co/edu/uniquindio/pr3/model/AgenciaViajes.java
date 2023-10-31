@@ -22,10 +22,11 @@ public class AgenciaViajes {
     private ArrayList<PaqueteTuristico> listaPaquetesTuristicos;
     private final String RUTA_PAQUETETURISTICO = "src/main/resources/persistencia/paqueteTuristico.data";
     private ArrayList<Cliente> listaClientes;
-    private final String RUTA_CLIENTE = "src/main/resources/persistencia/cliente.txt";
+    private final String RUTA_CLIENTE = "src/main/resources/persistencia/cliente.data";
     private ArrayList<GuiaTuristico> listaGuiasTuristicos;
     private final String RUTA_GUIATURISTICO = "src/main/resources/persistencia/guiaTuristico.data";
-
+    private ArrayList<Administrador> listaAdministrador;
+    private final String RUTA_ADMINISTRADOR = "src/main/resources/persistencia/administrador.data";
 
     //LOGGERS
     private static final Logger LOGGER =Logger.getLogger(AgenciaViajes.class.getName());
@@ -52,12 +53,19 @@ public class AgenciaViajes {
         leerDestinos();
 
         this.listaReservas = new ArrayList<>();
+        leerReserva();
+
         this.listaPaquetesTuristicos = new ArrayList<>();
+        leerPaqueteTuristico();
 
         this.listaClientes = new ArrayList<>();
-        //leerClientes();
         leerClienteSerializable();
+
         this.listaGuiasTuristicos = new ArrayList<>();
+        leerGuiaTuristico();
+
+        this.listaAdministrador = new ArrayList<>();
+        leerAdministrador();
 
     }
 
@@ -109,21 +117,6 @@ public class AgenciaViajes {
             }else{
                 Cliente nuevoCliente = new Cliente(nombre, identificacion ,correo,telefono,direccion, contrasenia);
                 LOGGER.log(Level.INFO, "El cliente de identificación "+identificacion+" se ha registrado");
-                /*try {
-                    FileWriter fw = new FileWriter(RUTA_CLIENTE, true);
-                    Formatter f = new Formatter(fw);
-                    f.format(nuevoCliente.getNombre() + ";" +
-                            nuevoCliente.getIdentificacion() + ";" +
-                            nuevoCliente.getCorreo() + ";" +
-                            nuevoCliente.getTelefono() + ";" +
-                            nuevoCliente.getDireccion() + ";" +
-                            nuevoCliente.getContrasenia() + "%n");
-                    fw.close();
-                }catch (FileNotFoundException e) {
-                    LOGGER.log(Level.SEVERE,e.getMessage(), e);
-                } catch (IOException e) {
-                    LOGGER.log(Level.WARNING,e.getMessage());
-                }*/
                 listaClientes.add(nuevoCliente);
                 escribirClientes();
             }
@@ -199,6 +192,7 @@ public class AgenciaViajes {
                     .imagenes(imagenes)
                     .clima(clima)
                     .build();
+            LOGGER.log(Level.INFO, "El Destino "+ciudad+" se ha creado");
             listaDestinos.add(destino);
             escribirDestinos();
         }
@@ -249,7 +243,9 @@ public class AgenciaViajes {
                     .fecha(fecha)
                     .listaDestinos(listaDestinos)
                     .build();
+            LOGGER.log(Level.INFO, "El paquete turistico "+nombre+" se ha creado");
             listaPaquetesTuristicos.add(p);
+            escribirPaqueteTuristico();
         }
     }
 
@@ -277,31 +273,33 @@ public class AgenciaViajes {
      *
      * @param fechaViaje
      * @param cantPersonas
-     * @param identificaionCliente
+     * @param identificacionCliente
      * @param nombrePaqueteTuristico
      * @param identificacionGuia
      * @param estadoReserva
      */
     public void crearReserva(LocalDateTime fechaViaje, int cantPersonas,
-            String identificaionCliente, String nombrePaqueteTuristico, String identificacionGuia,
+            String identificacionCliente, String nombrePaqueteTuristico, String identificacionGuia,
             EstadoReserva estadoReserva) throws ReservaExisteException,ReservaVaciaException{
-        if(fechaViaje == null || cantPersonas<=0 || identificaionCliente == null || identificaionCliente.isBlank() ||
+        if(fechaViaje == null || cantPersonas<=0 || identificacionCliente == null || identificacionCliente.isBlank() ||
                 identificacionGuia==null || identificacionGuia.isBlank()){
             throw new ReservaVaciaException("La reserva que desea crear es vacia, por favor, llene todos los campos");
         }
-        if(obtenerReserva(identificaionCliente, fechaViaje) != null){
+        if(obtenerReserva(identificacionCliente, fechaViaje) != null){
             throw new ReservaExisteException("La reserva que desea crear ya existe, por favor intente de nuevo");
         }else{
             Reserva newReserva = new Reserva.ReservaBuilder()
                     .fechaSolicitud(LocalDate.now())
                     .fechaViaje(fechaViaje)
                     .cantPersonas(cantPersonas)
-                    .clienteReserva(obtenerCliente(identificaionCliente))
+                    .clienteReserva(obtenerCliente(identificacionCliente))
                     .paqueteTuristico(obtenerPaqueteTuristico(nombrePaqueteTuristico))
                     .guiaTuristico(obtenerGuiaTuristico(identificacionGuia))
                     .estadoReserva(EstadoReserva.PENDIENTE)
                     .build();
+            LOGGER.log(Level.INFO, "El cliente de cedula "+identificacionCliente+" ha creado una reserva");
             listaReservas.add(newReserva);
+            escribirReservas();
         }
     }
 
@@ -326,8 +324,9 @@ public class AgenciaViajes {
             throw new GuiaTuristicoExisteException("El guía turistico que dese añadir ya existe");
         }else{
             GuiaTuristico guiaTuristico = new GuiaTuristico(nombre, identificacion, experciencia, lenguas);
+            LOGGER.log(Level.INFO, "El Guia Turistico de identificación "+identificacion+" se ha registrado");
             listaGuiasTuristicos.add(guiaTuristico);
-            ArchivoUtils.serializarObjeto(RUTA_GUIATURISTICO, listaGuiasTuristicos);
+            escribirGuiaTuristico();
         }
     }
 
@@ -337,14 +336,11 @@ public class AgenciaViajes {
     /**
      * /////////////////////////////////////////////////////////////////////////////////
      */
-    public void leerClientes() throws IOException {
-        ArrayList<String> lista = ArchivoUtils.leerArchivoScanner(RUTA_CLIENTE);
-        for (int i = 0; i < lista.size(); i++) {
-            String [] datos = lista.get(i).split(";");
-            this.listaClientes.add(new Cliente(datos[0], datos[1], datos[2], datos[3], datos[4], datos[5]));
-        }
-    }
 
+
+    /**
+     * Escribir datos
+     */
     public void escribirDestinos(){
         try {
             ArchivoUtils.serializarObjeto(RUTA_DESTINOS, listaDestinos);
@@ -361,6 +357,34 @@ public class AgenciaViajes {
         }
     }
 
+    public void escribirPaqueteTuristico(){
+        try {
+            ArchivoUtils.serializarObjeto(RUTA_PAQUETETURISTICO, listaPaquetesTuristicos);
+        } catch (IOException e) {
+            LOGGER.log(Level.SEVERE,e.getMessage());
+        }
+    }
+
+    public void escribirReservas(){
+        try {
+            ArchivoUtils.serializarObjeto(RUTA_RESERVAS, listaReservas);
+        } catch (IOException e) {
+            LOGGER.log(Level.SEVERE,e.getMessage());
+        }
+    }
+
+    public void escribirGuiaTuristico(){
+        try {
+            ArchivoUtils.serializarObjeto(RUTA_GUIATURISTICO, listaGuiasTuristicos);
+        } catch (IOException e) {
+            LOGGER.log(Level.SEVERE,e.getMessage());
+        }
+    }
+
+    /**
+     * leer datos
+     */
+
     public void leerClienteSerializable(){
         try{
             this.listaClientes = (ArrayList<Cliente>)ArchivoUtils.deserializarObjeto(RUTA_CLIENTE);
@@ -372,6 +396,38 @@ public class AgenciaViajes {
     private void leerDestinos(){
         try{
             this.listaDestinos = (ArrayList<Destino>)ArchivoUtils.deserializarObjeto(RUTA_DESTINOS);
+        } catch (IOException | ClassNotFoundException e) {
+            LOGGER.log(Level.SEVERE, e.getMessage());
+        }
+    }
+
+    private void leerReserva(){
+        try{
+            this.listaReservas = (ArrayList<Reserva>)ArchivoUtils.deserializarObjeto(RUTA_RESERVAS);
+        } catch (IOException | ClassNotFoundException e) {
+            LOGGER.log(Level.SEVERE, e.getMessage());
+        }
+    }
+
+    private void leerGuiaTuristico(){
+        try{
+            this.listaGuiasTuristicos = (ArrayList<GuiaTuristico>)ArchivoUtils.deserializarObjeto(RUTA_GUIATURISTICO);
+        } catch (IOException | ClassNotFoundException e) {
+            LOGGER.log(Level.SEVERE, e.getMessage());
+        }
+    }
+
+    private void leerPaqueteTuristico(){
+        try{
+            this.listaPaquetesTuristicos = (ArrayList<PaqueteTuristico>)ArchivoUtils.deserializarObjeto(RUTA_PAQUETETURISTICO);
+        } catch (IOException | ClassNotFoundException e) {
+            LOGGER.log(Level.SEVERE, e.getMessage());
+        }
+    }
+
+    private void leerAdministrador(){
+        try{
+            this.listaAdministrador = (ArrayList<Administrador>)ArchivoUtils.deserializarObjeto(RUTA_ADMINISTRADOR);
         } catch (IOException | ClassNotFoundException e) {
             LOGGER.log(Level.SEVERE, e.getMessage());
         }
