@@ -1,23 +1,22 @@
 package co.edu.uniquindio.pr3.controllers;
 
+import co.edu.uniquindio.pr3.model.Administrador;
+import co.edu.uniquindio.pr3.model.Cliente;
 import lombok.Getter;
+import lombok.Setter;
 
-import java.util.ResourceBundle;
-
+@Getter
+@Setter
 public class SingletonController {
 
-    @Getter
-    private final ResourceBundle resourceBundle;
-    private static SingletonController instancia;
-    private SingletonController(){
-        this.resourceBundle = ResourceBundle.getBundle("textos");
-    }
+    private static SingletonController instance;
+    private Cliente cliente;
+    private Administrador administrador;
+
     public static SingletonController getInstance(){
-        if(instancia == null){
-            System.out.println("Aquí se invoco la instancia");
-            instancia = new SingletonController();
+        if(instance == null){
+            instance = new SingletonController();
         }
-        System.out.println("Aquí se retorno la instancia");
-        return instancia;
+        return instance;
     }
 }

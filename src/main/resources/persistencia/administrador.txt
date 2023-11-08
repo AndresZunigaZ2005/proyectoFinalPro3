@@ -1,0 +1,3 @@
+Andres Felipe Zuniga Zuluaga;andresf.zunigaz@uqvirtual.edu.co;admin1
+Luis Carlos Calderon Calvo;luisc.calderonc@uqvirtual.edu.co;admin2
+Andres Eduardo Perez Martinez;andrese.perezm@uqvirtual.edu.co;admin3

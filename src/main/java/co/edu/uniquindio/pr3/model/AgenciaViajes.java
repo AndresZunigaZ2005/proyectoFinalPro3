@@ -2,32 +2,34 @@ package co.edu.uniquindio.pr3.model;
 
 import co.edu.uniquindio.pr3.exceptions.*;
 import co.edu.uniquindio.pr3.utils.ArchivoUtils;
+import javafx.scene.image.Image;
 
-import java.io.IOException;
+import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Properties;
+import java.util.Scanner;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 public class AgenciaViajes {
-
-
     private ArrayList<Destino> listaDestinos;
-    private final String RUTA_DESTINOS = "src/main/resources/persistencia/destinos.data";
+    private final String RUTA_DESTINOS;
     private ArrayList<Reserva> listaReservas;
-    private final String RUTA_RESERVAS = "src/main/resources/persistencia/reserva.data";
+    private final String RUTA_RESERVAS;
     private ArrayList<PaqueteTuristico> listaPaquetesTuristicos;
-    private final String RUTA_PAQUETETURISTICO = "src/main/resources/persistencia/paqueteTuristico.data";
+    private final String RUTA_PAQUETETURISTICO;
     private ArrayList<Cliente> listaClientes;
-    private final String RUTA_CLIENTE = "src/main/resources/persistencia/cliente.data";
+    private final String RUTA_CLIENTE;
     private ArrayList<GuiaTuristico> listaGuiasTuristicos;
-    private final String RUTA_GUIATURISTICO = "src/main/resources/persistencia/guiaTuristico.data";
+    private final String RUTA_GUIATURISTICO;
     private ArrayList<Administrador> listaAdministrador;
-    private final String RUTA_ADMINISTRADOR = "src/main/resources/persistencia/administrador.data";
+    private final String RUTA_ADMINISTRADOR;
 
+    private final String RUTA_PROPIEDADES = "config/textos.properties";
     //LOGGERS
     private static final Logger LOGGER =Logger.getLogger(AgenciaViajes.class.getName());
 
@@ -48,6 +50,17 @@ public class AgenciaViajes {
             LOGGER.log(Level.SEVERE, e.getMessage());
         }
         LOGGER.log(Level.INFO, "Se crea una nueva instanica de Agencia de viajes");
+
+        Properties prop = new Properties();
+        InputStream input = new FileInputStream(RUTA_PROPIEDADES);
+        prop.load(input);
+
+        RUTA_DESTINOS = prop.getProperty("RUTA_DESTINOS");
+        RUTA_RESERVAS = prop.getProperty("RUTA_RESERVAS");
+        RUTA_PAQUETETURISTICO = prop.getProperty("RUTA_PAQUETETURISTICO");
+        RUTA_CLIENTE = prop.getProperty("RUTA_CLIENTE");
+        RUTA_GUIATURISTICO = prop.getProperty("RUTA_GUIATURISTICO");
+        RUTA_ADMINISTRADOR = prop.getProperty("RUTA_ADMINISTRADOR");
 
         this.listaDestinos = new ArrayList<>();
         leerDestinos();
@@ -107,7 +120,7 @@ public class AgenciaViajes {
      */
 
     public void anadirCliente(String nombre, String identificacion, String correo,
-                              String telefono, String direccion, String contrasenia) throws ClienteVacioException,ClienteExisteException{
+                              String telefono, String direccion, String contrasenia, Image imagen) throws ClienteVacioException,ClienteExisteException{
         if (nombre == null || identificacion == null || correo == null || telefono == null || direccion == null || contrasenia == null
                 || nombre.isBlank() || identificacion.isBlank() || correo.isBlank() || telefono.isBlank() || direccion.isBlank() || contrasenia.isBlank()) {
                 throw new ClienteVacioException("El cliente se agrego con vacios, por favor, llene todos los valores obligatoriamente");
@@ -115,7 +128,7 @@ public class AgenciaViajes {
             if (obtenerCliente(identificacion) != null) {
                 throw new ClienteExisteException("El cliente que desea agregar ya existe, por favor revise su identificación");
             }else{
-                Cliente nuevoCliente = new Cliente(nombre, identificacion ,correo,telefono,direccion, contrasenia);
+                Cliente nuevoCliente = new Cliente(nombre, identificacion ,correo,telefono,direccion, contrasenia, imagen);
                 LOGGER.log(Level.INFO, "El cliente de identificación "+identificacion+" se ha registrado");
                 listaClientes.add(nuevoCliente);
                 escribirClientes();
@@ -425,10 +438,20 @@ public class AgenciaViajes {
         }
     }
 
-    private void leerAdministrador(){
-        try{
-            this.listaAdministrador = (ArrayList<Administrador>)ArchivoUtils.deserializarObjeto(RUTA_ADMINISTRADOR);
-        } catch (IOException | ClassNotFoundException e) {
+    public void leerAdministrador(){
+        try(Scanner scanner = new Scanner(new File("src/main/resources/persistencia/administrador.txt"))) {
+            while (scanner.hasNextLine()) {
+                String linea = scanner.nextLine();
+                String[] datos = linea.split(";");
+                if( datos.length == 6 ) {
+                    this.listaAdministrador.add(new Administrador.AdministradorBuilder()
+                            .nombre(datos[0])
+                            .correo(datos[1])
+                            .contrasenia(datos[2])
+                            .build());
+                }
+            }
+        } catch (FileNotFoundException e) {
             LOGGER.log(Level.SEVERE, e.getMessage());
         }
     }

@@ -12,7 +12,7 @@ public class PruebaProperties{
         Properties properties =  new Properties();
         InputStream stream = null;
         try{
-            stream = new FileInputStream("config/textos_en.properties");
+            stream = new FileInputStream("config/textos.properties");
 
             properties.load(stream);
 

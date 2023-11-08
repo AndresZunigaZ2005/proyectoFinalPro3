@@ -12,5 +12,5 @@ public class Administrador {
 
     private String nombre;
     private String correo;
-    private String conttasenia;
+    private String contrasenia;
 }
