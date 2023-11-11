@@ -1,22 +1,30 @@
 package co.edu.uniquindio.pr3.model;
 
-import javax.mail.Message;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
+import jakarta.mail.Message;
+import jakarta.mail.Session;
+import jakarta.mail.Transport;
+import jakarta.mail.internet.InternetAddress;
+import jakarta.mail.internet.MimeMessage;
+
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.Properties;
-import java.util.Random;
+
 
 public class Mail {
 
-    public static String mail(String asunto, String introduccionCuerpo, String finalCuerpo, String destino) throws Exception {
+    private final static String RUTA_PROPIEDADES = "config/textos.properties";
+
+    public static String mail(String asunto, String cuerpo, String destino) throws Exception {
         // Configuración del servidor de correo
+        Properties prop = new Properties();
+        InputStream input = new FileInputStream(RUTA_PROPIEDADES);
+        prop.load(input);
         String host = "smtp.office365.com";
         String port = "587";
-        String username = "LGZConcessionaire@hotmail.com";
-        String password = "RobinsonMiAmor1";
-        String imagenUrl = "https://i.ibb.co/cF2Vp5L/Logo-concesionario.png";
+        String username = prop.getProperty("usernameEmail");
+        String password = prop.getProperty("passwordEmail");
+        String imagenUrl = "https://i.ibb.co/ccX0NBc/d29b41e1-6ffb-436d-bf22-26a6f4425316.jpg";
         try {
             // Propiedades de la conexión
             Properties props = new Properties();
@@ -38,20 +46,10 @@ public class Mail {
             // Crear sesión de correo electrónico
             Session session = Session.getDefaultInstance(props);
 
-            // Generar un código aleatorio de 5 letras
-            String codigo = generarCodigoAleatorio();
-            String codigoAux = codigo;
-
             // Cuerpo del correo con una imagen en línea y el código de verificación
             String htmlBody ="<p style=\"text-align: center;\">"
                     + "<img src=\"" + imagenUrl + "\" width=\"300\">"
-                    + "<h2>Estimado Usuario,</h2>"
-                    + introduccionCuerpo+ generarContenidoHTML(codigo) + "</p>"
-                    + finalCuerpo
-                    + "<p>Si necesita asistencia adicional o tiene alguna pregunta, no dude en contactarnos a trav&eacutes de LGZConcessionaire@hotmail.com</p>"
-                    + "<p>Atentamente,</p>"
-                    + "<p>Equipo Londo&ntildeo, Garc&iacutea, Z&uacute&ntildeiga</p>"
-                    + "<p>LGZConcessionaire</p>";
+                    + cuerpo;
             MimeMessage message = new MimeMessage(session);
             message.setFrom(new InternetAddress(username));
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(destino));
@@ -69,40 +67,10 @@ public class Mail {
             transport.sendMessage(message, message.getAllRecipients());
             transport.close();
             System.out.println("Mensaje enviado");
-            return codigoAux;
         }catch(Exception e) {
             e.printStackTrace();
         }
         return "";
     }
 
-
-    // Generar un código aleatorio de letras
-    private static String generarCodigoAleatorio() {
-        String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-        StringBuilder codigo = new StringBuilder();
-        Random random = new Random();
-
-        for (int i = 0; i < 5; i++) {
-            int index = random.nextInt(caracteres.length());
-            codigo.append(caracteres.charAt(index));
-        }
-
-        return codigo.toString();
-    }
-
-    private static String generarContenidoHTML(String codigo) {
-        StringBuilder htmlBuilder = new StringBuilder();
-        htmlBuilder.append("<div style=\"display: flex;\">");
-
-        for (int i = 0; i < codigo.length(); i++) {
-            htmlBuilder.append("<div style=\"border: 1px solid black; width: 40px; height: 40px; text-align: center; font-size: 20px; margin-right: 10px;\">");
-            htmlBuilder.append(codigo.charAt(i));
-            htmlBuilder.append("</div>");
-        }
-
-        htmlBuilder.append("</div>");
-
-        return htmlBuilder.toString();
-    }
 }

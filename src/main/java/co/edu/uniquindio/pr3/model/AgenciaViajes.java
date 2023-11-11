@@ -2,7 +2,8 @@ package co.edu.uniquindio.pr3.model;
 
 import co.edu.uniquindio.pr3.exceptions.*;
 import co.edu.uniquindio.pr3.utils.ArchivoUtils;
-import javafx.scene.image.Image;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.*;
 import java.time.LocalDate;
@@ -15,6 +16,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+
+@Getter
+@Setter
 public class AgenciaViajes {
     private ArrayList<Destino> listaDestinos;
     private final String RUTA_DESTINOS;
@@ -29,7 +33,7 @@ public class AgenciaViajes {
     private ArrayList<Administrador> listaAdministrador;
     private final String RUTA_ADMINISTRADOR;
 
-    private final String RUTA_PROPIEDADES = "config/textos.properties";
+    private final String RUTA_PROPIEDADES = "src/main/resources/config/textos.properties";
     //LOGGERS
     private static final Logger LOGGER =Logger.getLogger(AgenciaViajes.class.getName());
 
@@ -41,7 +45,7 @@ public class AgenciaViajes {
     Constructores
      */
 
-    private AgenciaViajes() throws IOException {
+    private AgenciaViajes() {
         try {
             FileHandler fh = new FileHandler("logs.log", true);
             fh.setFormatter(new SimpleFormatter());
@@ -51,9 +55,16 @@ public class AgenciaViajes {
         }
         LOGGER.log(Level.INFO, "Se crea una nueva instanica de Agencia de viajes");
 
+        System.out.println("Aqui funciona");
         Properties prop = new Properties();
-        InputStream input = new FileInputStream(RUTA_PROPIEDADES);
-        prop.load(input);
+        FileInputStream input = null;
+        try {
+            input = new FileInputStream(RUTA_PROPIEDADES);
+            prop.load(input);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Aqui funciona 2");
 
         RUTA_DESTINOS = prop.getProperty("RUTA_DESTINOS");
         RUTA_RESERVAS = prop.getProperty("RUTA_RESERVAS");
@@ -63,26 +74,22 @@ public class AgenciaViajes {
         RUTA_ADMINISTRADOR = prop.getProperty("RUTA_ADMINISTRADOR");
 
         this.listaDestinos = new ArrayList<>();
-        leerDestinos();
-
         this.listaReservas = new ArrayList<>();
-        leerReserva();
-
         this.listaPaquetesTuristicos = new ArrayList<>();
-        leerPaqueteTuristico();
-
         this.listaClientes = new ArrayList<>();
-        leerClienteSerializable();
-
         this.listaGuiasTuristicos = new ArrayList<>();
-        leerGuiaTuristico();
-
         this.listaAdministrador = new ArrayList<>();
+
+        leerDestinos();
+        leerReserva();
+        leerPaqueteTuristico();
+        leerClienteSerializable();
+        leerGuiaTuristico();
         leerAdministrador();
 
     }
 
-    public static AgenciaViajes getInstance() throws IOException {
+    public static AgenciaViajes getInstance() {
         if (agenciaViajes == null){
             agenciaViajes = new AgenciaViajes();
         }
@@ -120,7 +127,7 @@ public class AgenciaViajes {
      */
 
     public void anadirCliente(String nombre, String identificacion, String correo,
-                              String telefono, String direccion, String contrasenia, Image imagen) throws ClienteVacioException,ClienteExisteException{
+                              String telefono, String direccion, String contrasenia, String imagen) throws ClienteVacioException,ClienteExisteException{
         if (nombre == null || identificacion == null || correo == null || telefono == null || direccion == null || contrasenia == null
                 || nombre.isBlank() || identificacion.isBlank() || correo.isBlank() || telefono.isBlank() || direccion.isBlank() || contrasenia.isBlank()) {
                 throw new ClienteVacioException("El cliente se agrego con vacios, por favor, llene todos los valores obligatoriamente");
@@ -188,7 +195,7 @@ public class AgenciaViajes {
      * Metodo para crear destinos, constructor con todos los atributos
      * @param nombre
      * @param ciudad
-     * @param imagenes
+     * @param imagen
      * @param clima
      * @throws DestinoVacioException
      * @throws DestinoExisteException

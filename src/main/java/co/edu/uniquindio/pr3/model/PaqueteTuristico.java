@@ -2,6 +2,7 @@ package co.edu.uniquindio.pr3.model;
 
 import lombok.*;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 @ToString
 @EqualsAndHashCode
 @Builder
-public class PaqueteTuristico {
+public class PaqueteTuristico implements Serializable {
 
     private String nombre;
     private int duracion;

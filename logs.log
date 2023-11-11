@@ -1,0 +1,78 @@
+nov. 09, 2023 10:27:13 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 10:27:16 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 10:27:17 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 10:27:19 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 10:27:19 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 10:27:19 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 10:27:19 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 10:27:19 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 10:27:19 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 10:27:22 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 10:27:22 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 10:27:24 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 10:27:24 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 10:27:24 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 10:27:57 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 10:30:58 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 10:37:25 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 10:45:49 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 10:47:52 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 10:53:09 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 10:59:50 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 10:59:53 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 10:59:55 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 11:01:12 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 11:02:45 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 11:02:52 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 11:04:26 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 11:05:49 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 09, 2023 11:05:49 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: "src\main\resources\persistencia\destinos.data" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 09, 2023 11:05:49 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: "src\main\resources\persistencia\reserva.data" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 09, 2023 11:05:49 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: "src\main\resources\persistencia\paqueteTuristico.data" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 09, 2023 11:05:49 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: "src\main\resources\persistencia\cliente.data" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 09, 2023 11:05:49 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.data" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 10, 2023 10:29:27 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 10, 2023 10:29:27 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: "src\main\resources\persistencia\destinos.data" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 10, 2023 10:29:27 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: "src\main\resources\persistencia\reserva.data" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 10, 2023 10:29:27 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: "src\main\resources\persistencia\paqueteTuristico.data" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 10, 2023 10:29:27 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: "src\main\resources\persistencia\cliente.data" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 10, 2023 10:29:27 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.data" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)

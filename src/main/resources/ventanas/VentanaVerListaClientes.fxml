@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import java.net.URL?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="1014.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.pr3.controllers.VentanaVerListaClientesController">
+   <stylesheets>
+       <URL value = "style.css" />
+   </stylesheets>
+    <top>
+      <HBox prefHeight="60.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <ScrollPane prefHeight="587.0" prefWidth="1071.0" BorderPane.alignment="CENTER">
+         <content>
+            <TableView fx:id="tableViewClientes" prefHeight="531.0" prefWidth="1013.0" styleClass="table-view">
+              <columns>
+                <TableColumn fx:id="columnFotoPerfil" prefWidth="132.0000001192093" text="Foto de Perfil" />
+                <TableColumn fx:id="columnNombre" prefWidth="182.6666259765625" text="Nombre" />
+                  <TableColumn fx:id="columnID" prefWidth="101.33331298828125" text="Identificación" />
+                  <TableColumn fx:id="columnCorreo" prefWidth="220.666748046875" text="Correo " />
+                  <TableColumn fx:id="columnTelefono" prefWidth="148.66668701171875" text="Telefono" />
+                  <TableColumn fx:id="columnDireccion" prefWidth="227.3333740234375" text="Dirección" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>

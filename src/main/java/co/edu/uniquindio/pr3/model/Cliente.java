@@ -1,7 +1,8 @@
 package co.edu.uniquindio.pr3.model;
 
-import javafx.scene.image.Image;
 import lombok.*;
+
+import java.io.Serializable;
 
 @Getter
 @Setter
@@ -10,15 +11,15 @@ import lombok.*;
 @ToString
 @EqualsAndHashCode
 
-public class Cliente extends Persona{
+public class Cliente extends Persona implements Serializable {
 
     private String correo;
     private String telefono;
     private String direccion;
     private String contrasenia;
-    private Image imagen;
+    private String imagen;
 
-    public Cliente(String nombre, String identificacion, String correo, String telefono, String direccion, String contrasenia, Image imagen) {
+    public Cliente(String nombre, String identificacion, String correo, String telefono, String direccion, String contrasenia, String imagen) {
         super(nombre,identificacion);
         this.correo = correo;
         this.telefono = telefono;
