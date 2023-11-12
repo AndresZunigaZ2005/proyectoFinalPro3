@@ -7,6 +7,7 @@ import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
 
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
@@ -15,7 +16,7 @@ public class Mail {
 
     private final static String RUTA_PROPIEDADES = "config/textos.properties";
 
-    public static String mail(String asunto, String cuerpo, String destino) throws Exception {
+    public static String mail(String asunto, String cuerpo, String destino) throws IOException {
         // Configuración del servidor de correo
         Properties prop = new Properties();
         InputStream input = new FileInputStream(RUTA_PROPIEDADES);

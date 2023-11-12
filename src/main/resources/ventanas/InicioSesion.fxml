@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="284.0" prefWidth="341.0" spacing="10" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.pr3.controllers.InicioSesionController">
+<VBox alignment="CENTER" prefHeight="308.0" prefWidth="408.0" spacing="10" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.pr3.controllers.InicioSesionController">
     <stylesheets>
         <URL value="@style.css" />
     </stylesheets>
@@ -30,7 +30,7 @@
             </children>
         </HBox>
       <AnchorPane prefHeight="15.0" prefWidth="327.0" />
-        <Button fx:id="loginButton" onAction="#cambiarVentanaPrincipal" text="Inciar Sesion" />
+        <Button fx:id="loginButton" onAction="#IniciarSesion" text="Inciar Sesion" />
       <Hyperlink fx:id="btnRecuperarContrasenia" onAction="#enviarCorreoRecuperacionContrasenia" text="¿Olvidó la contraseñia?" />
     </children>
     <padding>

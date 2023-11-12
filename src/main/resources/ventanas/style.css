@@ -40,3 +40,24 @@
     -fx-border-color: #000000;
     -fx-border-width: 5px;
 }
+
+.combo-box {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #00a0e9;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+}
+
+.combo-box .arrow {
+    -fx-background-color: #00a0e9;
+}
+
+.combo-box-popup .list-view .list-cell {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
+}
+
+.combo-box-popup .list-view .list-cell:selected {
+    -fx-background-color: #ffbb00;
+    -fx-text-fill: #000000;
+}

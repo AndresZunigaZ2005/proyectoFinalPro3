@@ -102,12 +102,12 @@ public class AgenciaViajes {
 
     /**
      * Metodo para obtener un cliente mediante su identificacion
-     * @param identificacion
+     * @param correo
      * @return Cliente
      */
-    public Cliente obtenerCliente(String identificacion) {
+    public Cliente obtenerCliente(String correo) {
         for (Cliente cliente : listaClientes) {
-            if (cliente.getIdentificacion().equals(identificacion)) {
+            if (cliente.getCorreo().equals(correo)) {
                 return cliente;
             }
         }
@@ -195,7 +195,7 @@ public class AgenciaViajes {
      * Metodo para crear destinos, constructor con todos los atributos
      * @param nombre
      * @param ciudad
-     * @param imagen
+     * @param imagenes
      * @param clima
      * @throws DestinoVacioException
      * @throws DestinoExisteException
@@ -351,6 +351,19 @@ public class AgenciaViajes {
     }
 
 
+    /**
+     * Metodos del administrador
+     */
+
+    public Administrador obtenerAdministrador(String correo, int i){
+        if(i>=listaAdministrador.size()){
+            return null;
+        }
+        if(listaAdministrador.get(i).getCorreo().equals(correo)){
+            return listaAdministrador.get(i);
+        }
+        return obtenerAdministrador(correo, i+1);
+    }
 
 
     /**

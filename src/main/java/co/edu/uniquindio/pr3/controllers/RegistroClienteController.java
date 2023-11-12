@@ -1,24 +1,35 @@
 package co.edu.uniquindio.pr3.controllers;
 
+import co.edu.uniquindio.pr3.exceptions.ClienteExisteException;
+import co.edu.uniquindio.pr3.exceptions.ClienteVacioException;
+import co.edu.uniquindio.pr3.model.AgenciaViajes;
+import co.edu.uniquindio.pr3.model.Mail;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import lombok.SneakyThrows;
 
-public class RegistroClienteController {
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.net.URL;
+import java.nio.channels.FileChannel;
+import java.util.Properties;
+import java.util.ResourceBundle;
 
-    @FXML
-    private Hyperlink btnIniciarSesion;
+public class RegistroClienteController implements Initializable {
 
     @FXML
     private Button btnRegistrarCliente;
 
     @FXML
-    private PasswordField contraseñaField;
+    private PasswordField contrasenaField;
 
     @FXML
     private Label contraseñaLabel;
@@ -65,21 +76,108 @@ public class RegistroClienteController {
     @FXML
     private Label title;
 
+    private AgenciaViajes agenciaViajes = AgenciaViajes.getInstance();
     private SingletonController singletonController = SingletonController.getInstance();
 
-    @FXML
-    void cambiarVentanaIniciarSesion(ActionEvent event) {
+    private final String RUTA_PROPIEDADES = "src/main/resources/config/textos.properties";
 
-    }
+    private Properties prop;
+    private FileInputStream input;
+    private Image selectedImage;
 
     @FXML
     void registrarCliente(ActionEvent event) {
+        String nombre = nombreField.getText();
+        String idetificacion = identificacionField.getText();
+        String telefono = telefonoField.getText();
+        String direccion = direccionField.getText();
+        String correo = correoField.getText();
+        String contrasena = contrasenaField.getText();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try{
+                    String mensajeRegistroExitoso = prop.getProperty("bodyEmailSuccesfulRegistration");
+                    mensajeRegistroExitoso = mensajeRegistroExitoso.replace("{nombreCliente}", nombre);
+                    mensajeRegistroExitoso = mensajeRegistroExitoso.replace("{correoElectronico}", correo);
+                    mensajeRegistroExitoso = mensajeRegistroExitoso.replace("{numeroTelefono}", telefono);
+                    mensajeRegistroExitoso = mensajeRegistroExitoso.replace("{Direccion}", direccion);
+
+                    Mail.mail(prop.getProperty("issueEmailSuccesfulRegistration") , mensajeRegistroExitoso ,correo);
+                    agenciaViajes.anadirCliente(nombre, idetificacion, correo, telefono, direccion, contrasena, prop.getProperty("RUTA_IMAGENES_CLIENTE"));
+
+                    if (selectedImage != null) {
+                        // Guardar la imagen en la carpeta deseada
+                        File outputFile = new File(prop.getProperty("RUTA_IMAGENES_CLIENTE")+correoField.getText());
+
+                        try (FileInputStream input = new FileInputStream(new File(selectedImage.getUrl().replace("file:/", "")));
+                             FileOutputStream output = new FileOutputStream(outputFile);
+                             FileChannel inChannel = input.getChannel();
+                             FileChannel outChannel = output.getChannel()) {
+
+                            inChannel.transferTo(0, inChannel.size(), outChannel);
+                            System.out.println("Imagen registrada en: " + outputFile.getAbsolutePath());
+
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                            // Manejar errores al guardar la imagen
+                        }
+                    }
+                    nombreField.clear();
+                    identificacionField.clear();
+                    telefonoField.clear();
+                    direccionField.clear();
+                    correoField.clear();
+                    contrasenaField.clear();
+
+
+                } catch (IOException e) {
+                    showAlert(Alert.AlertType.ERROR, prop.getProperty("error") , prop.getProperty("error") ,prop.getProperty("errorSendingEmailRegistration"));
+                } catch (ClienteExisteException | ClienteVacioException e) {
+                    showAlert(Alert.AlertType.ERROR, prop.getProperty("error"), prop.getProperty("error"), e.getMessage());
+                }
+            }
+        }).start();
 
     }
 
     @FXML
-    void seleccionarImagen(ActionEvent event) {
 
+    private void seleccionarImagen() {
+        Stage stage = (Stage) imagenButton.getScene().getWindow();
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Seleccionar Imagen");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Archivos de Imagen", "*.png", "*.jpg", "*.jpeg", "*.gif")
+        );
+
+        File selectedFile = fileChooser.showOpenDialog(stage);
+
+        if (selectedFile != null) {
+            selectedImage = new Image(selectedFile.toURI().toString());
+        }
     }
 
+
+    private Image selectedImageProperty() {
+        return selectedImage;
+    }
+
+    @SneakyThrows
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        prop = new Properties();
+        input = new FileInputStream(RUTA_PROPIEDADES);
+        prop.load(input);
+    }
+
+    public void showAlert(Alert.AlertType alertType, String title, String header, String message) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
 }

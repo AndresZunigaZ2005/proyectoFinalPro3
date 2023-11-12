@@ -20,7 +20,7 @@ public class Main extends Application {
             primaryStage.setScene(scene);
             primaryStage.setTitle("Agencia de Viajes UQ");
             primaryStage.show();
-            primaryStage.getIcons().add(new Image("https://i.ibb.co/Yf7ZfZZ/52b95b63-d41d-4140-ac3a-2fa9b1aca43a.jpg"));
+            primaryStage.getIcons().add(new Image("/Imagenes/ImagenIconoAvion.jpg"));
 
         } catch (IOException e) {
             throw new RuntimeException(e);

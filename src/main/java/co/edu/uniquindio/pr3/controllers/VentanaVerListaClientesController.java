@@ -58,5 +58,6 @@ public class VentanaVerListaClientesController implements Initializable {
 
         // Agregar los clientes al TableView
         listaClientes.addAll(agenciaViajes.getListaClientes());
+        tableViewClientes.setItems(listaClientes);
     }
 }

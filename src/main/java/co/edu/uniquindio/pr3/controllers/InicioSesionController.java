@@ -1,6 +1,7 @@
 package co.edu.uniquindio.pr3.controllers;
 
 import co.edu.uniquindio.pr3.model.AgenciaViajes;
+import co.edu.uniquindio.pr3.model.Cliente;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -35,8 +36,13 @@ public class InicioSesionController implements Initializable {
 
     private SingletonController singletonController = SingletonController.getInstance();
     @FXML
-    void cambiarVentanaPrincipal(ActionEvent event) {
-
+    void IniciarSesion(ActionEvent event) {
+        Cliente cliente = agenciaViajes.obtenerCliente(usernameField.getText());
+        if(cliente == null){
+            showAlert(Alert.AlertType.WARNING, prop.getProperty("warning"), prop.getProperty("warning"), prop.getProperty("bodywrongDatalogIn"));
+        }else{
+            singletonController.setCliente(cliente);
+        }
     }
 
     @FXML

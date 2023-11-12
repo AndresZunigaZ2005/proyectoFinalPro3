@@ -10,7 +10,7 @@
    <center>
       <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <content>
-            <TableView prefHeight="415.0" prefWidth="935.0">
+            <TableView prefHeight="420.0" prefWidth="935.0">
               <columns>
                 <TableColumn prefWidth="75.0" text="C1" />
                 <TableColumn prefWidth="75.0" text="C2" />
@@ -20,6 +20,6 @@
       </ScrollPane>
    </center>
    <top>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <HBox prefHeight="70.0" prefWidth="937.0" BorderPane.alignment="CENTER" />
    </top>
 </BorderPane>

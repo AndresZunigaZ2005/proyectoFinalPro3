@@ -17,6 +17,7 @@
                   <Button fx:id="button" mnemonicParsing="false" onAction="#desplegableEvent" style="-fx-border-radius: 5em; -fx-background-radius: 5em;" />
                   <Button fx:id="btn1" mnemonicParsing="false" onAction="#cambiarVentanaLogIn" text="Button" />
                   <Button fx:id="btn2" mnemonicParsing="false" onAction="#cambiarVentanaSingUp" text="Button" />
+                  <Button fx:id="btn3" mnemonicParsing="false" onAction="#cambiarVentanaCreacionDestinos" text="Button" />
                </children>
             </HBox>
          </children>
