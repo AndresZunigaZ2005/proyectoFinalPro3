@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="868.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.pr3.controllers.VentanaCreacionPaquetesController">
+   <top>
+      <HBox alignment="CENTER" prefHeight="82.0" prefWidth="762.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label stylesheets="@style.css" text="Crea un Paquete Turistico" />
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="77.0" prefWidth="762.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnCrearPaqueteTuristico" mnemonicParsing="false" onAction="#crearPaqueteTuristico" prefHeight="39.0" prefWidth="227.0" stylesheets="@style.css" text="Crear Paquete Turistico" />
+         </children></HBox>
+   </bottom>
+   <left>
+      <VBox prefHeight="407.0" prefWidth="73.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <VBox prefHeight="407.0" prefWidth="43.0" BorderPane.alignment="CENTER" />
+   </right>
+   <center>
+      <GridPane BorderPane.alignment="CENTER_LEFT">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="370.6666259765625" minWidth="10.0" prefWidth="354.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="402.66668701171875" minWidth="10.0" prefWidth="398.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="103.0" stylesheets="@style.css" text="Nombre: " />
+                  <TextField fx:id="txtFieldNombre" prefHeight="25.0" prefWidth="242.0" stylesheets="@style.css" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="103.0" stylesheets="@style.css" text="Duración:" />
+                  <TextField fx:id="txtFieldDuracion" prefHeight="25.0" prefWidth="242.0" stylesheets="@style.css" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" GridPane.rowIndex="2">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="103.0" stylesheets="@style.css" text="Servicios:" />
+                  <TextArea fx:id="txtAreaServicios" prefHeight="102.0" prefWidth="242.0" styleClass="text-field" stylesheets="@style.css" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" GridPane.rowIndex="3">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="103.0" stylesheets="@style.css" text="Precio: " />
+                  <TextField fx:id="txtFieldPrecio" prefHeight="25.0" prefWidth="242.0" stylesheets="@style.css" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="135.0" stylesheets="@style.css" text="Cupo Máximo:" />
+                  <TextField fx:id="txtFieldCupoMaximo" prefHeight="25.0" prefWidth="242.0" stylesheets="@style.css" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="102.0" prefWidth="387.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="91.0" stylesheets="@style.css" text="Fecha:" />
+                  <DatePicker fx:id="datePickerFecha" prefHeight="37.0" prefWidth="146.0" styleClass="date-picker" stylesheets="@style.css" />
+                  <AnchorPane prefHeight="102.0" prefWidth="17.0" />
+                  <Spinner fx:id="spinnerHora" editable="true" prefHeight="25.0" prefWidth="72.0" stylesheets="@style.css" />
+                  <AnchorPane prefHeight="102.0" prefWidth="20.0" />
+                  <Spinner fx:id="spinnerMin" editable="true" prefHeight="25.0" prefWidth="65.0" stylesheets="@style.css" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="135.0" stylesheets="@style.css" text="Destinos:" />
+                  <ComboBox fx:id="comboBoxDestinos" prefHeight="29.0" prefWidth="154.0" promptText="Escoja los destinos" stylesheets="@style.css" />
+                  <AnchorPane prefHeight="102.0" prefWidth="18.0" />
+                  <Button fx:id="btnAgregarDestino" mnemonicParsing="false" onAction="#agregarDestino" prefHeight="39.0" prefWidth="125.0" stylesheets="@style.css" text="Agregar" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <ListView fx:id="listViewDestinos" prefHeight="102.0" prefWidth="250.0" />
+                  <AnchorPane prefHeight="102.0" prefWidth="29.0" />
+                  <Button fx:id="btnEliminarDestino" mnemonicParsing="false" onAction="#eliminarDestino" prefHeight="39.0" prefWidth="125.0" stylesheets="@style.css" text="Eliminar" />
+               </children></HBox>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>

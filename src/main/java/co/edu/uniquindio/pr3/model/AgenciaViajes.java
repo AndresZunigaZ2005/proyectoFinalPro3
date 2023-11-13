@@ -5,9 +5,13 @@ import co.edu.uniquindio.pr3.utils.ArchivoUtils;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Properties;
 import java.util.Scanner;
@@ -137,8 +141,8 @@ public class AgenciaViajes {
             }else{
                 Cliente nuevoCliente = new Cliente(nombre, identificacion ,correo,telefono,direccion, contrasenia, imagen);
                 LOGGER.log(Level.INFO, "El cliente de identificación "+identificacion+" se ha registrado");
-                listaClientes.add(nuevoCliente);
                 escribirClientes();
+                listaClientes.add(nuevoCliente);
             }
         }
     }
@@ -247,13 +251,15 @@ public class AgenciaViajes {
      * @param listaDestinos
      */
     public void crearPaqueteTuristico(String nombre, int duracion, String servicios,
-                                      double precio, int cupoMaximo, LocalDate fecha, ArrayList<Destino> listaDestinos) throws PaqueteVacioException, PaqueteExisteException {
+                                      double precio, int cupoMaximo, LocalDateTime fecha, ArrayList<Destino> listaDestinos) throws PaqueteVacioException, PaqueteExisteException, PaqueteUnoDiferenciaException {
         if(nombre==null || nombre.isBlank() || duracion<=0 || servicios==null ||
-        servicios.isBlank() || precio<=0 || cupoMaximo<=0 || fecha.isAfter(LocalDate.now())){
-            throw new PaqueteExisteException("El paquete turistico que desea ingresar, tiene campos vacios, por favor ingrese todos los campos");
+        servicios.isBlank() || precio<=0 || cupoMaximo<=0 || fecha.isBefore(LocalDateTime.now())){
+            throw new PaqueteVacioException("El paquete turistico que desea ingresar, tiene campos vacios, por favor ingrese todos los campos");
         } else if (obtenerPaqueteTuristico(nombre)!=null) {
-
-        }else {
+            throw new PaqueteExisteException("El paquete turistico ya existe");
+        } else if (ChronoUnit.DAYS.between(LocalDateTime.now(), fecha) <= 1) {
+            throw new PaqueteUnoDiferenciaException("El paquete turistico debe de ser creado con un día de anticipación");
+        } else {
             PaqueteTuristico p = new PaqueteTuristico.PaqueteTuristicoBuilder()
                     .nombre(nombre)
                     .duracion(duracion)

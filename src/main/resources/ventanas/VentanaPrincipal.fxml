@@ -18,6 +18,7 @@
                   <Button fx:id="btn1" mnemonicParsing="false" onAction="#cambiarVentanaLogIn" text="Button" />
                   <Button fx:id="btn2" mnemonicParsing="false" onAction="#cambiarVentanaSingUp" text="Button" />
                   <Button fx:id="btn3" mnemonicParsing="false" onAction="#cambiarVentanaCreacionDestinos" text="Button" />
+                  <Button fx:id="btn4" mnemonicParsing="false" onAction="#cambiarVentanaCreacionGuia" text="Button" />
                </children>
             </HBox>
          </children>

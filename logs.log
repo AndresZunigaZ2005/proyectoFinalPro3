@@ -256,3 +256,183 @@ nov. 11, 2023 10:32:51 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClien
 SEVERE: "src\main\resources\persistencia\cliente.data" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
 nov. 11, 2023 10:32:51 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
 SEVERE: "src\main\resources\persistencia\guiaTuristico.data" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:23:41 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 12, 2023 11:23:41 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: "src\main\resources\persistencia\destinos.data" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:23:41 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: "src\main\resources\persistencia\reserva.data" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:23:41 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: "src\main\resources\persistencia\paqueteTuristico.data" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:23:41 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: "src\main\resources\persistencia\cliente.data" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:23:41 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.data" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:25:48 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 12, 2023 11:25:48 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: "src\main\resources\persistencia\destinos.data" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:25:48 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: "src\main\resources\persistencia\reserva.data" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:25:48 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: "src\main\resources\persistencia\paqueteTuristico.data" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:25:48 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: "src\main\resources\persistencia\cliente.data" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:25:48 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.data" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:27:06 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes anadirCliente
+INFO: El cliente de identificación 18394952 se ha registrado
+nov. 12, 2023 11:27:06 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes escribirClientes
+SEVERE: "src\main\resources\persistencia\cliente.data" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:30:25 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 12, 2023 11:30:25 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: "src\main\resources\persistencia\destinos.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:30:25 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: "src\main\resources\persistencia\reserva.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:30:25 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: "src\main\resources\persistencia\paqueteTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:30:25 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:30:25 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:31:04 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes anadirCliente
+INFO: El cliente de identificación 18394952 se ha registrado
+nov. 12, 2023 11:31:04 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes escribirClientes
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:35:06 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 12, 2023 11:35:06 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: "src\main\resources\persistencia\destinos.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:35:06 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: "src\main\resources\persistencia\reserva.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:35:06 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: "src\main\resources\persistencia\paqueteTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:35:06 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:35:06 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:35:48 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes anadirCliente
+INFO: El cliente de identificación 18394952 se ha registrado
+nov. 12, 2023 11:35:48 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes escribirClientes
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:50:55 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 12, 2023 11:50:55 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: "src\main\resources\persistencia\destinos.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:50:55 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: "src\main\resources\persistencia\reserva.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:50:55 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: "src\main\resources\persistencia\paqueteTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:50:55 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:50:55 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 11:51:59 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes anadirCliente
+INFO: El cliente de identificación 18394952 se ha registrado
+nov. 12, 2023 11:51:59 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes escribirClientes
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 2:50:39 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 12, 2023 2:50:39 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: "src\main\resources\persistencia\destinos.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 2:50:39 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: "src\main\resources\persistencia\reserva.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 2:50:39 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: "src\main\resources\persistencia\paqueteTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 2:50:39 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 2:50:39 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 4:11:06 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 12, 2023 4:11:06 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: "src\main\resources\persistencia\destinos.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 4:11:06 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: "src\main\resources\persistencia\reserva.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 4:11:06 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: "src\main\resources\persistencia\paqueteTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 4:11:06 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 4:11:06 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 4:20:46 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 12, 2023 4:20:46 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: "src\main\resources\persistencia\destinos.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 4:20:46 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: "src\main\resources\persistencia\reserva.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 4:20:46 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: "src\main\resources\persistencia\paqueteTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 4:20:46 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 4:20:46 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 4:22:33 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 12, 2023 4:22:33 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: "src\main\resources\persistencia\destinos.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 4:22:33 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: "src\main\resources\persistencia\reserva.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 4:22:33 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: "src\main\resources\persistencia\paqueteTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 4:22:33 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 4:22:33 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 4:47:49 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 12, 2023 4:47:49 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: "src\main\resources\persistencia\destinos.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 4:47:49 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: "src\main\resources\persistencia\reserva.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 4:47:49 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: "src\main\resources\persistencia\paqueteTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 4:47:49 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 4:47:49 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 5:35:29 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 12, 2023 5:35:29 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: "src\main\resources\persistencia\destinos.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 5:35:29 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: "src\main\resources\persistencia\reserva.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 5:35:29 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: "src\main\resources\persistencia\paqueteTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 5:35:29 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 5:35:29 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 5:41:07 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes crearGuiaTuristico
+INFO: El Guia Turistico de identificación 10098383 se ha registrado
+nov. 12, 2023 5:41:07 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes escribirGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 5:59:45 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 12, 2023 5:59:45 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: "src\main\resources\persistencia\destinos.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 5:59:45 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: "src\main\resources\persistencia\reserva.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 5:59:45 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: "src\main\resources\persistencia\paqueteTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 5:59:45 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 5:59:45 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 6:00:46 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes anadirCliente
+INFO: El cliente de identificación 18394952 se ha registrado
+nov. 12, 2023 6:00:46 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes escribirClientes
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 9:48:39 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 12, 2023 9:48:39 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: "src\main\resources\persistencia\destinos.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 9:48:39 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: "src\main\resources\persistencia\reserva.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 9:48:39 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: "src\main\resources\persistencia\paqueteTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 9:48:39 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 12, 2023 9:48:39 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)

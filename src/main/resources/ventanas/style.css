@@ -21,14 +21,21 @@
 }
 
 .text-field {
-    width: 300px;
-    height: 40px;
-    border: 2px solid #00a0e9;
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 18px;
-    font-family: Arial, sans-serif;
-    color: #333; outline: none;
+    -fx-font-size: 14px; /* Tamaño de fuente, ajusta según tus preferencias */
+    -fx-text-fill: black; /* Color del texto */
+    -fx-prompt-text-fill: gray; /* Color del texto de marcador de posición */
+
+    /* Hacer transparentes los bordes izquierdo, derecho y superior */
+    -fx-border-width: 0 0 4 0;
+    -fx-border-color: transparent transparent #ffbb00 transparent;
+}
+
+.text-field:focused {
+    /* Estilo para el estado enfocado, si es necesario */
+}
+
+.text-field:hover {
+    /* Estilo para el estado de hover, si es necesario */
 }
 
 .table-view{
@@ -60,4 +67,17 @@
 .combo-box-popup .list-view .list-cell:selected {
     -fx-background-color: #ffbb00;
     -fx-text-fill: #000000;
+}
+
+/* Estilo para DatePicker */
+.date-picker {
+    -fx-border-color: #00a0e9; /* Color de fondo del DatePicker */
+    -fx-text-fill: #ffffff; /* Color del texto del DatePicker */
+    -fx-border-width: 2px;
+}
+
+/* Estilo para Spinner */
+.spinner {
+    -fx-background-color: #00a0e9; /* Color de fondo del Spinner */
+    -fx-text-fill: #000000; /* Color del texto del Spinner */
 }

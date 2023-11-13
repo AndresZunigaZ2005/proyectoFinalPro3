@@ -30,6 +30,9 @@ public class VentanaPrincipalController implements Initializable {
     private Button btn3;
 
     @FXML
+    private Button btn4;
+
+    @FXML
     private VBox menu;
 
     @FXML
@@ -93,6 +96,18 @@ public class VentanaPrincipalController implements Initializable {
         try {
             System.out.println("se presiono el boton");
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/ventanas/ventanaCreacionDestinos.fxml"));
+            Parent nuevaVentana= loader.load();
+            panelDinamico.setCenter(nuevaVentana);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    void cambiarVentanaCreacionGuia(ActionEvent event){
+        try {
+            System.out.println("se presiono el boton");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ventanas/VentanaCrearGuia.fxml"));
             Parent nuevaVentana= loader.load();
             panelDinamico.setCenter(nuevaVentana);
         } catch (IOException e) {

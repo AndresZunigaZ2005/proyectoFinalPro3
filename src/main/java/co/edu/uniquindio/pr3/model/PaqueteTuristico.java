@@ -3,7 +3,7 @@ package co.edu.uniquindio.pr3.model;
 import lombok.*;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 @Getter
@@ -20,6 +20,6 @@ public class PaqueteTuristico implements Serializable {
     private String servicios;
     private double precio;
     private int cupoMaximo;
-    private LocalDate fecha;
+    private LocalDateTime fecha;
     private ArrayList<Destino> listaDestinos;
 }

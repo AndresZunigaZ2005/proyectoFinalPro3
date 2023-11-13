@@ -14,9 +14,9 @@ import java.util.Properties;
 
 public class Mail {
 
-    private final static String RUTA_PROPIEDADES = "config/textos.properties";
+    private final static String RUTA_PROPIEDADES = "src/main/resources/config/textos.properties";
 
-    public static String mail(String asunto, String cuerpo, String destino) throws IOException {
+    public static void mail(String asunto, String cuerpo, String destino) throws IOException {
         // Configuración del servidor de correo
         Properties prop = new Properties();
         InputStream input = new FileInputStream(RUTA_PROPIEDADES);
@@ -47,10 +47,11 @@ public class Mail {
             // Crear sesión de correo electrónico
             Session session = Session.getDefaultInstance(props);
 
-            // Cuerpo del correo con una imagen en línea y el código de verificación
+            // Cuerpo del correo con una imagen en línea
             String htmlBody ="<p style=\"text-align: center;\">"
                     + "<img src=\"" + imagenUrl + "\" width=\"300\">"
-                    + cuerpo;
+                    +"<br>"
+                    +cuerpo;
             MimeMessage message = new MimeMessage(session);
             message.setFrom(new InternetAddress(username));
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(destino));
@@ -71,7 +72,6 @@ public class Mail {
         }catch(Exception e) {
             e.printStackTrace();
         }
-        return "";
     }
 
 }

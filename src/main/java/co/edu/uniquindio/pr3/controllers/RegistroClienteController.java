@@ -94,53 +94,50 @@ public class RegistroClienteController implements Initializable {
         String correo = correoField.getText();
         String contrasena = contrasenaField.getText();
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try{
-                    String mensajeRegistroExitoso = prop.getProperty("bodyEmailSuccesfulRegistration");
-                    mensajeRegistroExitoso = mensajeRegistroExitoso.replace("{nombreCliente}", nombre);
-                    mensajeRegistroExitoso = mensajeRegistroExitoso.replace("{correoElectronico}", correo);
-                    mensajeRegistroExitoso = mensajeRegistroExitoso.replace("{numeroTelefono}", telefono);
-                    mensajeRegistroExitoso = mensajeRegistroExitoso.replace("{Direccion}", direccion);
+        try{
+            String mensajeRegistroExitoso = prop.getProperty("bodyEmailSuccesfulRegistration");
+            mensajeRegistroExitoso = mensajeRegistroExitoso.replace("{nombreCliente}", nombre);
+            mensajeRegistroExitoso = mensajeRegistroExitoso.replace("{correoElectronico}", correo);
+            mensajeRegistroExitoso = mensajeRegistroExitoso.replace("{numeroTelefono}", telefono);
+            mensajeRegistroExitoso = mensajeRegistroExitoso.replace("{Direccion}", direccion);
 
-                    Mail.mail(prop.getProperty("issueEmailSuccesfulRegistration") , mensajeRegistroExitoso ,correo);
-                    agenciaViajes.anadirCliente(nombre, idetificacion, correo, telefono, direccion, contrasena, prop.getProperty("RUTA_IMAGENES_CLIENTE"));
+            Mail.mail(prop.getProperty("issueEmailSuccesfulRegistration") , mensajeRegistroExitoso ,correo);
+            agenciaViajes.anadirCliente(nombre, idetificacion, correo, telefono, direccion, contrasena, prop.getProperty("RUTA_IMAGENES_CLIENTE"));
+            if (selectedImage != null) {
+                // Guardar la imagen en la carpeta deseada
+                File outputFile = new File(prop.getProperty("RUTA_IMAGENES_CLIENTE")+correoField.getText()+".png");
 
-                    if (selectedImage != null) {
-                        // Guardar la imagen en la carpeta deseada
-                        File outputFile = new File(prop.getProperty("RUTA_IMAGENES_CLIENTE")+correoField.getText());
+                try (FileInputStream input = new FileInputStream(new File(selectedImage.getUrl().replace("file:/", "")));
+                     FileOutputStream output = new FileOutputStream(outputFile);
+                     FileChannel inChannel = input.getChannel();
+                     FileChannel outChannel = output.getChannel()) {
 
-                        try (FileInputStream input = new FileInputStream(new File(selectedImage.getUrl().replace("file:/", "")));
-                             FileOutputStream output = new FileOutputStream(outputFile);
-                             FileChannel inChannel = input.getChannel();
-                             FileChannel outChannel = output.getChannel()) {
-
-                            inChannel.transferTo(0, inChannel.size(), outChannel);
-                            System.out.println("Imagen registrada en: " + outputFile.getAbsolutePath());
-
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                            // Manejar errores al guardar la imagen
-                        }
-                    }
-                    nombreField.clear();
-                    identificacionField.clear();
-                    telefonoField.clear();
-                    direccionField.clear();
-                    correoField.clear();
-                    contrasenaField.clear();
-
+                    inChannel.transferTo(0, inChannel.size(), outChannel);
+                    System.out.println("Imagen registrada en: " + outputFile.getAbsolutePath());
 
                 } catch (IOException e) {
-                    showAlert(Alert.AlertType.ERROR, prop.getProperty("error") , prop.getProperty("error") ,prop.getProperty("errorSendingEmailRegistration"));
-                } catch (ClienteExisteException | ClienteVacioException e) {
-                    showAlert(Alert.AlertType.ERROR, prop.getProperty("error"), prop.getProperty("error"), e.getMessage());
+                    e.printStackTrace();
+                    // Manejar errores al guardar la imagen
                 }
             }
-        }).start();
+            else{
+                showAlert(Alert.AlertType.WARNING, prop.getProperty("warning"), prop.getProperty("warning"), "Escoja una foto de perfil");
+            }
+            nombreField.clear();
+            identificacionField.clear();
+            telefonoField.clear();
+            direccionField.clear();
+            correoField.clear();
+            contrasenaField.clear();
 
+
+        } catch (IOException e) {
+            showAlert(Alert.AlertType.ERROR, prop.getProperty("error") , prop.getProperty("error") ,prop.getProperty("errorSendingEmailRegistration"));
+        } catch (ClienteExisteException | ClienteVacioException e) {
+            showAlert(Alert.AlertType.ERROR, prop.getProperty("error"), prop.getProperty("error"), e.getMessage());
+        }
     }
+
 
     @FXML
 
