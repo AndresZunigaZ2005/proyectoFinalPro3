@@ -115,6 +115,99 @@ public class VentanaPrincipalController implements Initializable {
         }
     }
 
+    @FXML
+    void cambiarVentanaActualizarPerfil(ActionEvent event){
+        try {
+            System.out.println("se presiono el boton");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ventanas/VentanaActualizarCliente.fxml"));
+            Parent nuevaVentana= loader.load();
+            panelDinamico.setCenter(nuevaVentana);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    void cambiarVentanaVerDestinos(ActionEvent event) {
+        try {
+            System.out.println("se presiono el boton");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ventanas/VentanaVerDestinos.fxml"));
+            Parent nuevaVentana= loader.load();
+            panelDinamico.setCenter(nuevaVentana);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    void cambiarVentanaVerListaClientes(ActionEvent event){
+        try {
+            System.out.println("se presiono el boton");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ventanas/VentanaVerListaClientes.fxml"));
+            Parent nuevaVentana= loader.load();
+            panelDinamico.setCenter(nuevaVentana);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    void cambiarVentanaCrearPaquetes(ActionEvent event){
+        try {
+            System.out.println("se presiono el boton");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ventanas/VentanaCreacionPaquetes.fxml"));
+            Parent nuevaVentana= loader.load();
+            panelDinamico.setCenter(nuevaVentana);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    void cambiarVentanaMostrarPaquetes(ActionEvent event) {
+        try {
+            System.out.println("se presiono el boton");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ventanas/VentanaMostrarPaquetes.fxml"));
+            Parent nuevaVentana= loader.load();
+            panelDinamico.setCenter(nuevaVentana);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public Button getBtnIniciarSesion() {
+        return btnIniciarSesion;
+    }
+
+    public Button getBtnRegistroCliente() {
+        return btnRegistrarClientes;
+    }
+
+    public Button getBtnCrearDestinos() {
+        return btnCrearDestinos;
+    }
+
+    public Button getBtnCrearGuia() {
+        return btnCrearGuia;
+    }
+
+    public Button getBtnActualizarPerfil() {
+        return btnActualizarPerfil;
+    }
+
+    public Button getBtnVerDestinos() {
+        return btnVerDestinos;
+    }
+
+    public Button getBtnVerListaClientes() {
+        return btnVerListaClientes;
+    }
+
+    public Button getBtnCrearPaquetes() {
+        return btnCrearPaquetes;
+    }
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
