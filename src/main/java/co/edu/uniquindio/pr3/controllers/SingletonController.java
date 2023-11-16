@@ -14,12 +14,14 @@ public class SingletonController {
     private static SingletonController instance;
     private Cliente cliente;
     private Administrador administrador;
-    private StringBuilder codigoRecuperacionCorreo;
+    private String codigoRecuperacionCorreo;
+    private String correoCambiarContrasena;
 
     public SingletonController() {
         this.cliente = null;
         this.administrador = null;
         this.codigoRecuperacionCorreo = null;
+        this.correoCambiarContrasena = null;
     }
 
     public static SingletonController getInstance(){
@@ -29,20 +31,22 @@ public class SingletonController {
         return instance;
     }
 
-    private String generarCodigoAleatorio() {
+    public String generarCodigoAleatorio() {
         codigoRecuperacionCorreo = null;
+        StringBuilder codigoRecuperacionAux = new StringBuilder();
         String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
         Random random = new Random();
 
         for (int i = 0; i < 5; i++) {
             int index = random.nextInt(caracteres.length());
-            codigoRecuperacionCorreo.append(caracteres.charAt(index));
+            codigoRecuperacionAux.append(caracteres.charAt(index));
         }
-
-        return codigoRecuperacionCorreo.toString();
+        codigoRecuperacionCorreo = codigoRecuperacionAux.toString();
+        System.out.println(codigoRecuperacionCorreo);
+        return codigoRecuperacionCorreo;
     }
 
-    private String generarContenidoHTML(String codigo) {
+    public String generarContenidoHTML(String codigo) {
         StringBuilder htmlBuilder = new StringBuilder();
         htmlBuilder.append("<div style=\"display: flex;\">");
 

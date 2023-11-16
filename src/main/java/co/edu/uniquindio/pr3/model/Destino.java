@@ -9,7 +9,6 @@ import java.util.ArrayList;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @EqualsAndHashCode
 @Builder
 public class Destino implements Serializable {
@@ -18,4 +17,9 @@ public class Destino implements Serializable {
     private String ciudad;
     private ArrayList<String> imagenes;
     private Clima clima;
+
+    @Override
+    public String toString() {
+        return nombre;
+    }
 }

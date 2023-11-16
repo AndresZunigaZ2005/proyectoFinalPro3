@@ -60,8 +60,9 @@ public class VentanaCrearGuiaController implements Initializable {
         int experiencia = Integer.parseInt(txtFieldExp.getText());
         try {
             agenciaViajes.crearGuiaTuristico(nombre, identificacion, experiencia, listaLenguas);
+            showAlert(Alert.AlertType.ERROR, prop.getProperty("Error"), prop.getProperty("Error"), prop.getProperty("GuideCreatedSuccessfully"));
         } catch (GuiaTuristicoVacioException | GuiaTuristicoExisteException e) {
-            showAlert(Alert.AlertType.ERROR, prop.getProperty("Error"), prop.getProperty("Error"), e.getMessage());
+            showAlert(Alert.AlertType.INFORMATION, prop.getProperty("information"), prop.getProperty("information"), e.getMessage());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -74,7 +75,7 @@ public class VentanaCrearGuiaController implements Initializable {
             listaLenguas.add(idiomaSeleccionado);
             actualizarListView();
         }else {
-            showAlert(Alert.AlertType.ERROR, prop.getProperty("error"), prop.getProperty("error"), prop.getProperty("NotSelectedLanguage"));
+            showAlert(Alert.AlertType.ERROR, prop.getProperty("error"), prop.getProperty("error"), "Escoja otro idioma");
         }
     }
 
@@ -85,12 +86,16 @@ public class VentanaCrearGuiaController implements Initializable {
             listaLenguas.remove(idiomaSeleccionado);
             actualizarListView();
         }
+        else{
+            showAlert(Alert.AlertType.ERROR, prop.getProperty("error"), prop.getProperty("error"), prop.getProperty("NotSelectedLanguage"));
+        }
     }
 
     private void actualizarListView() {
         ObservableList<Lengua> observableListaIdiomas = FXCollections.observableArrayList(listaLenguas);
         listViewLenguas.setItems(observableListaIdiomas);
     }
+
     @SneakyThrows
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

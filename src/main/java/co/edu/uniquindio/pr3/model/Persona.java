@@ -16,4 +16,9 @@ public class Persona implements Serializable {
 
     private String nombre;
     private String identificacion;
+
+    @Override
+    public String toString() {
+        return nombre;
+    }
 }

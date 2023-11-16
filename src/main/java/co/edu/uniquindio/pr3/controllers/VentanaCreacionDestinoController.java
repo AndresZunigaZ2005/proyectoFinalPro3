@@ -1,22 +1,29 @@
 package co.edu.uniquindio.pr3.controllers;
 
+import co.edu.uniquindio.pr3.exceptions.DestinoExisteException;
+import co.edu.uniquindio.pr3.exceptions.DestinoVacioException;
 import co.edu.uniquindio.pr3.model.AgenciaViajes;
 import co.edu.uniquindio.pr3.model.Clima;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
+import javafx.scene.image.PixelReader;
+import javafx.scene.paint.Color;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import lombok.SneakyThrows;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Properties;
@@ -78,6 +85,9 @@ public class VentanaCreacionDestinoController implements Initializable {
             } catch (DestinoVacioException | DestinoExisteException e) {
                 showAlert(Alert.AlertType.INFORMATION, "warning", "warning", e.getMessage());
             }
+        }
+        else{
+            showAlert(Alert.AlertType.ERROR, prop.getProperty("warning"), prop.getProperty("warning"), prop.getProperty("NotSelectedWeather"));
         }
     }
 

@@ -10,7 +10,6 @@ import java.util.ArrayList;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @EqualsAndHashCode
 @Builder
 public class PaqueteTuristico implements Serializable {
@@ -22,4 +21,9 @@ public class PaqueteTuristico implements Serializable {
     private int cupoMaximo;
     private LocalDateTime fecha;
     private ArrayList<Destino> listaDestinos;
+
+    @Override
+    public String toString() {
+        return nombre;
+    }
 }

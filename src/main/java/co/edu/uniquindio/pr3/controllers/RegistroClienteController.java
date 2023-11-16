@@ -83,7 +83,7 @@ public class RegistroClienteController implements Initializable {
 
     private Properties prop;
     private FileInputStream input;
-    private Image selectedImage;
+    private Image selectedImage = null;
 
     @FXML
     void registrarCliente(ActionEvent event) {
@@ -101,11 +101,11 @@ public class RegistroClienteController implements Initializable {
             mensajeRegistroExitoso = mensajeRegistroExitoso.replace("{numeroTelefono}", telefono);
             mensajeRegistroExitoso = mensajeRegistroExitoso.replace("{Direccion}", direccion);
 
-            Mail.mail(prop.getProperty("issueEmailSuccesfulRegistration") , mensajeRegistroExitoso ,correo);
             agenciaViajes.anadirCliente(nombre, idetificacion, correo, telefono, direccion, contrasena, prop.getProperty("RUTA_IMAGENES_CLIENTE"));
+            Mail.mail(prop.getProperty("issueEmailSuccesfulRegistration") , mensajeRegistroExitoso ,correo);
             if (selectedImage != null) {
                 // Guardar la imagen en la carpeta deseada
-                File outputFile = new File(prop.getProperty("RUTA_IMAGENES_CLIENTE")+correoField.getText()+".png");
+                File outputFile = new File(prop.getProperty("RUTA_IMAGENES_CLIENTE")+identificacionField.getText()+".png");
 
                 try (FileInputStream input = new FileInputStream(new File(selectedImage.getUrl().replace("file:/", "")));
                      FileOutputStream output = new FileOutputStream(outputFile);
@@ -140,7 +140,6 @@ public class RegistroClienteController implements Initializable {
 
 
     @FXML
-
     private void seleccionarImagen() {
         Stage stage = (Stage) imagenButton.getScene().getWindow();
 

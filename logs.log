@@ -436,3 +436,465 @@ nov. 12, 2023 9:48:39 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClient
 SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
 nov. 12, 2023 9:48:39 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
 SEVERE: "src\main\resources\persistencia\guiaTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 11:45:20 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 13, 2023 11:45:20 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: "src\main\resources\persistencia\destinos.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 11:45:20 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: "src\main\resources\persistencia\reserva.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 11:45:20 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: "src\main\resources\persistencia\paqueteTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 11:45:20 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 11:45:20 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 11:46:55 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 13, 2023 11:46:55 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: "src\main\resources\persistencia\destinos.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 11:46:55 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: "src\main\resources\persistencia\reserva.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 11:46:55 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: "src\main\resources\persistencia\paqueteTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 11:46:55 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 11:46:55 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 2:16:24 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 13, 2023 2:16:24 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: "src\main\resources\persistencia\destinos.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 2:16:24 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: "src\main\resources\persistencia\reserva.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 2:16:24 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: "src\main\resources\persistencia\paqueteTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 2:16:24 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 2:16:24 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 2:42:30 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 13, 2023 2:42:30 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: "src\main\resources\persistencia\destinos.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 2:42:30 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: "src\main\resources\persistencia\reserva.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 2:42:30 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: "src\main\resources\persistencia\paqueteTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 2:42:30 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 2:42:30 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 2:59:13 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 13, 2023 2:59:13 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: "src\main\resources\persistencia\destinos.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 2:59:13 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: "src\main\resources\persistencia\reserva.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 2:59:13 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: "src\main\resources\persistencia\paqueteTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 2:59:13 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 2:59:13 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 3:34:53 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 13, 2023 3:34:53 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: "src\main\resources\persistencia\destinos.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 3:34:53 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: "src\main\resources\persistencia\reserva.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 3:34:53 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: "src\main\resources\persistencia\paqueteTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 3:34:53 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 3:34:53 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 3:36:18 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 13, 2023 3:36:18 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: "src\main\resources\persistencia\destinos.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 3:36:18 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: "src\main\resources\persistencia\reserva.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 3:36:18 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: "src\main\resources\persistencia\paqueteTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 3:36:18 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 3:36:18 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 3:38:55 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 13, 2023 3:38:55 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: "src\main\resources\persistencia\destinos.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 3:38:55 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: "src\main\resources\persistencia\reserva.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 3:38:55 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: "src\main\resources\persistencia\paqueteTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 3:38:55 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 3:38:55 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 8:22:36 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 13, 2023 8:22:36 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: "src\main\resources\persistencia\destinos.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 8:22:36 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: "src\main\resources\persistencia\reserva.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 8:22:36 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: "src\main\resources\persistencia\paqueteTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 8:22:36 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 8:22:36 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 9:15:06 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 13, 2023 9:15:06 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: "src\main\resources\persistencia\destinos.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 9:15:06 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: "src\main\resources\persistencia\reserva.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 9:15:06 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: "src\main\resources\persistencia\paqueteTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 9:15:06 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 9:15:06 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 9:42:14 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 13, 2023 9:42:14 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: "src\main\resources\persistencia\destinos.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 9:42:14 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: "src\main\resources\persistencia\reserva.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 9:42:14 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: "src\main\resources\persistencia\paqueteTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 9:42:14 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 9:42:14 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: "src\main\resources\persistencia\guiaTuristico.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 9:42:59 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes anadirCliente
+INFO: El cliente de identificación 1094889063 se ha registrado
+nov. 13, 2023 9:42:59 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes escribirClientes
+SEVERE: "src\main\resources\persistencia\cliente.ser" (El nombre de archivo, el nombre de directorio o la sintaxis de la etiqueta del volumen no son correctos)
+nov. 13, 2023 9:45:15 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 13, 2023 9:45:15 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: src\main\resources\persistencia\destinos.ser (El sistema no puede encontrar el archivo especificado)
+nov. 13, 2023 9:45:15 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 13, 2023 9:45:15 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: src\main\resources\persistencia\paqueteTuristico.ser (El sistema no puede encontrar el archivo especificado)
+nov. 13, 2023 9:45:15 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerClienteSerializable
+SEVERE: src\main\resources\persistencia\cliente.ser (El sistema no puede encontrar el archivo especificado)
+nov. 13, 2023 9:45:15 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: src\main\resources\persistencia\guiaTuristico.ser (El sistema no puede encontrar el archivo especificado)
+nov. 13, 2023 9:46:59 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes anadirCliente
+INFO: El cliente de identificación 1094889063 se ha registrado
+nov. 13, 2023 9:53:57 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 13, 2023 9:53:57 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: src\main\resources\persistencia\destinos.ser (El sistema no puede encontrar el archivo especificado)
+nov. 13, 2023 9:53:57 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 13, 2023 9:53:57 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: src\main\resources\persistencia\paqueteTuristico.ser (El sistema no puede encontrar el archivo especificado)
+nov. 13, 2023 9:53:57 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerGuiaTuristico
+SEVERE: src\main\resources\persistencia\guiaTuristico.ser (El sistema no puede encontrar el archivo especificado)
+nov. 13, 2023 9:54:50 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes crearGuiaTuristico
+INFO: El Guia Turistico de identificación 1094920456 se ha registrado
+nov. 14, 2023 8:21:28 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 14, 2023 8:21:28 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: src\main\resources\persistencia\destinos.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 8:21:28 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 8:21:28 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: src\main\resources\persistencia\paqueteTuristico.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 8:31:09 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 14, 2023 8:31:09 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: src\main\resources\persistencia\destinos.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 8:31:09 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 8:31:09 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: src\main\resources\persistencia\paqueteTuristico.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 8:38:59 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 14, 2023 8:38:59 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: src\main\resources\persistencia\destinos.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 8:38:59 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 8:38:59 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: src\main\resources\persistencia\paqueteTuristico.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 8:43:13 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 14, 2023 8:43:13 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: src\main\resources\persistencia\destinos.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 8:43:13 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 8:43:13 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: src\main\resources\persistencia\paqueteTuristico.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 8:43:33 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes actualizarCliente
+INFO: Se ha actualizado el cliente de identificación 1094889063
+nov. 14, 2023 8:45:22 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 14, 2023 8:45:22 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: src\main\resources\persistencia\destinos.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 8:45:22 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 8:45:22 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: src\main\resources\persistencia\paqueteTuristico.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 8:46:54 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes crearGuiaTuristico
+INFO: El Guia Turistico de identificación 1057294023 se ha registrado
+nov. 14, 2023 9:28:17 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 14, 2023 9:28:17 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: src\main\resources\persistencia\destinos.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 9:28:17 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 9:28:17 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: src\main\resources\persistencia\paqueteTuristico.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 9:30:07 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 14, 2023 9:30:07 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: src\main\resources\persistencia\destinos.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 9:30:07 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 9:30:07 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: src\main\resources\persistencia\paqueteTuristico.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 9:56:11 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 14, 2023 9:56:11 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: src\main\resources\persistencia\destinos.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 9:56:11 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 9:56:11 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: src\main\resources\persistencia\paqueteTuristico.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 9:57:19 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 14, 2023 9:57:19 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: src\main\resources\persistencia\destinos.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 9:57:19 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 9:57:19 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: src\main\resources\persistencia\paqueteTuristico.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 10:20:37 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 14, 2023 10:20:37 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: src\main\resources\persistencia\destinos.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 10:20:37 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 10:20:37 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: src\main\resources\persistencia\paqueteTuristico.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 10:25:58 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 14, 2023 10:25:58 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: src\main\resources\persistencia\destinos.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 10:25:58 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 10:25:58 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: src\main\resources\persistencia\paqueteTuristico.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 10:27:21 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes crearDestino
+INFO: El Destino Valencia se ha creado
+nov. 14, 2023 10:31:34 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 14, 2023 10:31:34 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 10:31:34 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: src\main\resources\persistencia\paqueteTuristico.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 10:34:10 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 14, 2023 10:34:10 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 10:34:10 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: src\main\resources\persistencia\paqueteTuristico.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 10:36:38 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 14, 2023 10:36:38 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 10:36:38 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: src\main\resources\persistencia\paqueteTuristico.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 10:48:11 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 14, 2023 10:48:11 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 10:48:11 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: src\main\resources\persistencia\paqueteTuristico.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 3:37:29 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 14, 2023 3:37:29 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 3:37:29 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: src\main\resources\persistencia\paqueteTuristico.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 3:41:04 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 14, 2023 3:41:04 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 3:41:04 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: src\main\resources\persistencia\paqueteTuristico.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 5:40:36 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 14, 2023 5:40:36 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 5:40:36 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: src\main\resources\persistencia\paqueteTuristico.ser (El sistema no puede encontrar el archivo especificado)
+nov. 14, 2023 11:16:51 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 14, 2023 11:16:51 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 15, 2023 8:22:28 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 15, 2023 8:22:28 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 15, 2023 8:26:42 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 15, 2023 8:26:42 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 15, 2023 8:35:53 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 15, 2023 8:35:53 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 15, 2023 8:37:41 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 15, 2023 8:37:41 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 15, 2023 9:13:24 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 15, 2023 9:13:24 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 15, 2023 9:17:19 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 15, 2023 9:17:19 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 15, 2023 9:22:32 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 15, 2023 9:22:32 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 15, 2023 9:26:55 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 15, 2023 9:26:55 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 15, 2023 11:09:46 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 15, 2023 11:09:46 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 15, 2023 4:13:35 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 15, 2023 4:13:35 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 15, 2023 4:23:39 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 15, 2023 4:23:39 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 15, 2023 4:25:25 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 15, 2023 4:25:25 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 15, 2023 4:27:14 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 15, 2023 4:27:14 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 15, 2023 4:29:08 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 15, 2023 4:29:08 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 15, 2023 4:32:00 P. M. co.edu.uniquindio.pr3.model.AgenciaViajes crearGuiaTuristico
+INFO: El Guia Turistico de identificación 1948294065 se ha registrado
+nov. 16, 2023 8:25:50 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 16, 2023 8:25:50 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 16, 2023 8:53:15 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 16, 2023 8:53:15 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 16, 2023 8:55:36 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 16, 2023 8:55:36 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 16, 2023 8:57:46 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes crearGuiaTuristico
+INFO: El Guia Turistico de identificación 2383749327 se ha registrado
+nov. 16, 2023 10:47:42 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 16, 2023 10:47:43 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 16, 2023 10:47:43 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: co.edu.uniquindio.pr3.model.PaqueteTuristico; local class incompatible: stream classdesc serialVersionUID = 8458642510522225862, local class serialVersionUID = -5809435187958384855
+nov. 16, 2023 10:49:59 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 16, 2023 10:49:59 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 16, 2023 10:54:35 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 16, 2023 10:54:35 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 16, 2023 11:04:10 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 16, 2023 11:04:10 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 16, 2023 11:10:59 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 16, 2023 11:10:59 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 16, 2023 11:18:16 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 16, 2023 11:18:16 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 16, 2023 11:32:31 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 16, 2023 11:32:31 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: src\main\resources\persistencia\destinos.ser (El sistema no puede encontrar el archivo especificado)
+nov. 16, 2023 11:32:31 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 16, 2023 11:34:25 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 16, 2023 11:34:25 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: src\main\resources\persistencia\destinos.ser (El sistema no puede encontrar el archivo especificado)
+nov. 16, 2023 11:34:25 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 16, 2023 11:35:25 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 16, 2023 11:35:25 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: src\main\resources\persistencia\destinos.ser (El sistema no puede encontrar el archivo especificado)
+nov. 16, 2023 11:35:25 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 16, 2023 11:35:40 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 16, 2023 11:35:40 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerDestinos
+SEVERE: src\main\resources\persistencia\destinos.ser (El sistema no puede encontrar el archivo especificado)
+nov. 16, 2023 11:35:40 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 16, 2023 11:35:40 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerPaqueteTuristico
+SEVERE: src\main\resources\persistencia\paqueteTuristico.ser (El sistema no puede encontrar el archivo especificado)
+nov. 16, 2023 11:36:34 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes crearDestino
+INFO: El Destino Valencia se ha creado
+nov. 16, 2023 11:37:55 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes crearPaqueteTuristico
+INFO: El paquete turistico Viajando Por Valencia se ha creado
+nov. 16, 2023 11:40:43 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 16, 2023 11:40:44 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 16, 2023 11:41:52 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 16, 2023 11:41:52 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 16, 2023 11:42:52 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 16, 2023 11:42:52 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 16, 2023 11:48:17 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 16, 2023 11:48:17 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 16, 2023 11:50:56 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 16, 2023 11:50:56 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 16, 2023 11:53:21 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 16, 2023 11:53:21 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 16, 2023 11:55:17 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 16, 2023 11:55:17 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)
+nov. 16, 2023 11:59:49 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes <init>
+INFO: Se crea una nueva instanica de Agencia de viajes
+nov. 16, 2023 11:59:49 A. M. co.edu.uniquindio.pr3.model.AgenciaViajes leerReserva
+SEVERE: src\main\resources\persistencia\reserva.ser (El sistema no puede encontrar el archivo especificado)

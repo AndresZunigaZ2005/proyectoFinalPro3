@@ -41,7 +41,7 @@
                         <Button fx:id="btnAnadirLengua" mnemonicParsing="false" onAction="#AnadirLengua" prefHeight="39.0" prefWidth="165.0" stylesheets="@style.css" text="Añadir Lengua" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="88.0" prefWidth="614.0">
                      <children>
                         <ListView fx:id="listViewLenguas" prefHeight="97.0" prefWidth="177.0" styleClass="text-field" stylesheets="@style.css" />
                         <VBox prefHeight="97.0" prefWidth="53.0" />
@@ -59,7 +59,7 @@
             </HBox>
          </top>
          <bottom>
-            <HBox alignment="CENTER" prefHeight="75.0" prefWidth="776.0" BorderPane.alignment="CENTER">
+            <HBox alignment="BOTTOM_CENTER" prefHeight="75.0" prefWidth="776.0" BorderPane.alignment="CENTER">
                <children>
                   <Button fx:id="btnAnadirGuia" mnemonicParsing="false" onAction="#AnadirGuiaTuristico" stylesheets="@style.css" text="Añadir Guia Turistico" />
                </children>

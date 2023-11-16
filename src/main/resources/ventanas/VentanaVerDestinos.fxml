@@ -1,25 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="937.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
-   <center>
-      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <content>
-            <TableView prefHeight="420.0" prefWidth="935.0">
-              <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
-              </columns>
-            </TableView>
-         </content>
-      </ScrollPane>
-   </center>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="937.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.pr3.controllers.VentanaVerDestinosController">
    <top>
-      <HBox prefHeight="70.0" prefWidth="937.0" BorderPane.alignment="CENTER" />
+      <HBox alignment="CENTER" prefHeight="70.0" prefWidth="937.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label stylesheets="@style.css" text="Destinos Disponibles " />
+         </children>
+      </HBox>
    </top>
+   <left>
+      <VBox prefHeight="397.0" prefWidth="29.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <VBox prefHeight="397.0" prefWidth="62.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <HBox prefHeight="65.0" prefWidth="937.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane prefHeight="222.0" prefWidth="773.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="65.0" prefWidth="423.0">
+                           <children>
+                              <Label stylesheets="@style.css" text="Seleccione un Destino:" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="73.0" prefWidth="423.0">
+                           <children>
+                              <ComboBox fx:id="comboBoxDestino" onAction="#showSelectedDestino" prefHeight="29.0" prefWidth="188.0" stylesheets="@style.css" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="52.0" prefWidth="423.0">
+                           <children>
+                              <Label stylesheets="@style.css" text="Nombre:" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="60.0" prefWidth="423.0">
+                           <children>
+                              <TextField fx:id="txtFieldNombre" editable="false" prefHeight="25.0" prefWidth="196.0" stylesheets="@style.css" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="68.0" prefWidth="423.0">
+                           <children>
+                              <Label stylesheets="@style.css" text="Ciudad:" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="65.0" prefWidth="423.0">
+                           <children>
+                              <TextField fx:id="txtFieldCiudad" editable="false" prefHeight="25.0" prefWidth="196.0" stylesheets="@style.css" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="57.0" prefWidth="423.0">
+                           <children>
+                              <Label stylesheets="@style.css" text="Clima" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="51.0" prefWidth="423.0">
+                           <children>
+                              <TextField fx:id="txtFieldClima" editable="false" prefHeight="25.0" prefWidth="196.0" stylesheets="@style.css" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </GridPane>
+            <HBox alignment="CENTER" prefHeight="176.0" prefWidth="846.0">
+               <children>
+                  <Button fx:id="btnPreviousImage" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#showPreviousImage" style="-fx-background-color: FFFFFF;" />
+                  <ImageView fx:id="imageViewFotosDestinos" fitHeight="178.0" fitWidth="293.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button fx:id="btnNextImage" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#showNextImage" style="-fx-background-color: FFFFFF;" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
 </BorderPane>

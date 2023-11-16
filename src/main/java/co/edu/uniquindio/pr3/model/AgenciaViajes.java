@@ -9,10 +9,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Properties;
 import java.util.Scanner;
 import java.util.logging.FileHandler;
@@ -109,13 +112,34 @@ public class AgenciaViajes {
      * @param correo
      * @return Cliente
      */
-    public Cliente obtenerCliente(String correo) {
-        for (Cliente cliente : listaClientes) {
-            if (cliente.getCorreo().equals(correo)) {
-                return cliente;
-            }
+    public Cliente obtenerClienteCorreo(String correo, int i) {
+        if(i == listaClientes.size()){
+            return null;
         }
-        return null;
+        if(listaClientes.get(i).getCorreo().equals(correo)){
+            return listaClientes.get(i);
+        }
+        else{
+            return obtenerClienteCorreo(correo, i+1);
+        }
+    }
+
+    /**
+     *
+     * @param identificacion
+     * @param i siempre se inicializa en 0
+     * @return
+     */
+    public Cliente obtenerClienteIdentificacion(String identificacion, int i) {
+        if(i == listaClientes.size()){
+            return null;
+        }
+        if(listaClientes.get(i).getIdentificacion().equals(identificacion)){
+            return listaClientes.get(i);
+        }
+        else{
+            return obtenerClienteIdentificacion(identificacion, i+1);
+        }
     }
 
     /**
@@ -136,13 +160,13 @@ public class AgenciaViajes {
                 || nombre.isBlank() || identificacion.isBlank() || correo.isBlank() || telefono.isBlank() || direccion.isBlank() || contrasenia.isBlank()) {
                 throw new ClienteVacioException("El cliente se agrego con vacios, por favor, llene todos los valores obligatoriamente");
         } else {
-            if (obtenerCliente(identificacion) != null) {
-                throw new ClienteExisteException("El cliente que desea agregar ya existe, por favor revise su identificación");
+            if (obtenerAdministrador(correo, 0) != null || obtenerClienteIdentificacion(identificacion, 0) != null || obtenerClienteCorreo(correo, 0) != null) {
+                throw new ClienteExisteException("El cliente que desea agregar ya existe, por favor revise su identificación o el correo");
             }else{
                 Cliente nuevoCliente = new Cliente(nombre, identificacion ,correo,telefono,direccion, contrasenia, imagen);
                 LOGGER.log(Level.INFO, "El cliente de identificación "+identificacion+" se ha registrado");
-                escribirClientes();
                 listaClientes.add(nuevoCliente);
+                escribirClientes();
             }
         }
     }
@@ -156,15 +180,15 @@ public class AgenciaViajes {
      * @param telefono
      * @param direccion
      */
-    public void actualizarCliente(String nombre, String identificacion ,String correo, String telefono, String direccion) throws ClienteVacioException {
-        Cliente clienteActualizar = obtenerCliente(identificacion);
+    public void actualizarCliente(String nombre, String identificacion ,String correo, String telefono, String direccion, String imagen) throws ClienteVacioException {
+        Cliente clienteActualizar = obtenerClienteIdentificacion(identificacion, 0);
         if(clienteActualizar.getNombre().equals(nombre) && clienteActualizar.getCorreo().equals(correo)
-        && clienteActualizar.getTelefono().equals(telefono)){
-            throw new ClienteVacioException("El cliente se agrego con vacios, por favor, llene todos los valores obligatoriamente");
+        && clienteActualizar.getTelefono().equals(telefono) && clienteActualizar.getImagen() != null && clienteActualizar.getImagen().equals(imagen) && sonImagenesIguales(clienteActualizar.getImagen(), imagen)){
+            throw new ClienteVacioException("No se actulizó, todos los datos son iguales");
         }
         else if (nombre == null || correo == null || telefono == null || direccion == null
                 || nombre.isBlank() || correo.isBlank() || telefono.isBlank() || direccion.isBlank()) {
-            throw new ClienteVacioException("El cliente se agrego con vacios, por favor, llene todos los valores obligatoriamente");
+            throw new ClienteVacioException("Por favor, llene todos los valores obligatoriamente");
         }
         else {
             clienteActualizar.setNombre(nombre);
@@ -175,6 +199,18 @@ public class AgenciaViajes {
         }
     }
 
+    private static boolean sonImagenesIguales(String rutaImagen1, String rutaImagen2) {
+        try {
+            byte[] contenidoImagen1 = Files.readAllBytes(Paths.get(rutaImagen1));
+            byte[] contenidoImagen2 = Files.readAllBytes(Paths.get(rutaImagen2));
+
+            return Arrays.equals(contenidoImagen1, contenidoImagen2);
+        } catch (IOException e) {
+            e.printStackTrace(); // Maneja la excepción adecuadamente en tu aplicación
+            return false; // En caso de error, asumimos que las imágenes no son iguales
+        }
+    }
+
     /**
      * Metodos CRUD para la creacion de destinos
      */
@@ -182,16 +218,19 @@ public class AgenciaViajes {
 
     /**
      * Metodos CRUD para la obtener destinos mediante la ciudad
-     * @param ciudad
+     * @param nombre
      * @return
      */
-    public Destino obtenerDestino(String ciudad){
-        for (Destino destino: listaDestinos) {
-            if(destino.getCiudad().equals(ciudad)){
-                return destino;
-            }
+    public Destino obtenerDestino(String nombre, int i){
+        if(i == listaDestinos.size()){
+            return null;
         }
-        return null;
+        if(listaDestinos.get(i).getNombre().equals(nombre)){
+            return listaDestinos.get(i);
+        }
+        else{
+            return obtenerDestino(nombre, i+1);
+        }
     }
 
 
@@ -204,10 +243,10 @@ public class AgenciaViajes {
      * @throws DestinoVacioException
      * @throws DestinoExisteException
      */
-    public void crerDestino(String nombre,String ciudad, ArrayList<String> imagenes, Clima clima) throws DestinoVacioException, DestinoExisteException {
+    public void crearDestino(String nombre,String ciudad, ArrayList<String> imagenes, Clima clima) throws DestinoVacioException, DestinoExisteException {
         if(nombre==null||ciudad==null || nombre.isBlank() || ciudad.isBlank()){
             throw new DestinoVacioException("El destino que usted desea agregar se añadio con vacios, por favor, ingrese los datos en todos los campos");
-        }else if(obtenerDestino(ciudad)!=null){
+        }else if(obtenerDestino(nombre,0)!=null){
             throw new DestinoExisteException("El destino que usted desea agreagar ya se añadio con anterioridad, por favor, ingrese otro");
         }else{
             Destino destino = new Destino.DestinoBuilder()
@@ -231,13 +270,16 @@ public class AgenciaViajes {
      * @param nombre
      * @return
      */
-    public PaqueteTuristico obtenerPaqueteTuristico(String nombre){
-        for (PaqueteTuristico paqueteTuristico : listaPaquetesTuristicos) {
-            if(paqueteTuristico.getNombre().equals(nombre)){
-                return paqueteTuristico;
-            }
+    public PaqueteTuristico obtenerPaqueteTuristico(String nombre, int i){
+        if(i == listaPaquetesTuristicos.size()){
+            return null;
         }
-        return null;
+        if(listaPaquetesTuristicos.get(i).getNombre().equals(nombre)){
+            return listaPaquetesTuristicos.get(i);
+        }
+        else{
+            return obtenerPaqueteTuristico(nombre, i+1);
+        }
     }
 
     /**
@@ -255,7 +297,7 @@ public class AgenciaViajes {
         if(nombre==null || nombre.isBlank() || duracion<=0 || servicios==null ||
         servicios.isBlank() || precio<=0 || cupoMaximo<=0 || fecha.isBefore(LocalDateTime.now())){
             throw new PaqueteVacioException("El paquete turistico que desea ingresar, tiene campos vacios, por favor ingrese todos los campos");
-        } else if (obtenerPaqueteTuristico(nombre)!=null) {
+        } else if (obtenerPaqueteTuristico(nombre, 0)!=null) {
             throw new PaqueteExisteException("El paquete turistico ya existe");
         } else if (ChronoUnit.DAYS.between(LocalDateTime.now(), fecha) <= 1) {
             throw new PaqueteUnoDiferenciaException("El paquete turistico debe de ser creado con un día de anticipación");
@@ -285,14 +327,24 @@ public class AgenciaViajes {
      * @param fechaReserva
      * @return
      */
-    public Reserva obtenerReserva(String identificacion, LocalDateTime fechaReserva){
-        Cliente cliente = obtenerCliente(identificacion);
-        for (Reserva reserva: listaReservas){
-            if(reserva.getClienteReserva().equals(cliente) && reserva.getFechaViaje().equals(fechaReserva)){
-                return reserva;
-            }
+    public Reserva obtenerReserva(String identificacion, LocalDateTime fechaReserva) {
+        return obtenerReservaRecursivo(identificacion, fechaReserva, 0);
+    }
+
+    private Reserva obtenerReservaRecursivo(String identificacion, LocalDateTime fechaReserva, int index) {
+        if (index >= listaReservas.size()) {
+            return null; // No se encontró la reserva
         }
-        return null;
+
+        Cliente cliente = obtenerClienteIdentificacion(identificacion, 0);
+        Reserva reserva = listaReservas.get(index);
+
+        if (reserva.getClienteReserva().equals(cliente) && reserva.getFechaViaje().equals(fechaReserva)) {
+            return reserva; // Se encontró la reserva
+        }
+
+        // Llamada recursiva para buscar en la siguiente reserva
+        return obtenerReservaRecursivo(identificacion, fechaReserva, index + 1);
     }
 
     /**
@@ -302,11 +354,9 @@ public class AgenciaViajes {
      * @param identificacionCliente
      * @param nombrePaqueteTuristico
      * @param identificacionGuia
-     * @param estadoReserva
      */
     public void crearReserva(LocalDateTime fechaViaje, int cantPersonas,
-            String identificacionCliente, String nombrePaqueteTuristico, String identificacionGuia,
-            EstadoReserva estadoReserva) throws ReservaExisteException,ReservaVaciaException{
+            String identificacionCliente, String nombrePaqueteTuristico, String identificacionGuia) throws ReservaExisteException,ReservaVaciaException{
         if(fechaViaje == null || cantPersonas<=0 || identificacionCliente == null || identificacionCliente.isBlank() ||
                 identificacionGuia==null || identificacionGuia.isBlank()){
             throw new ReservaVaciaException("La reserva que desea crear es vacia, por favor, llene todos los campos");
@@ -318,10 +368,10 @@ public class AgenciaViajes {
                     .fechaSolicitud(LocalDate.now())
                     .fechaViaje(fechaViaje)
                     .cantPersonas(cantPersonas)
-                    .clienteReserva(obtenerCliente(identificacionCliente))
-                    .paqueteTuristico(obtenerPaqueteTuristico(nombrePaqueteTuristico))
-                    .guiaTuristico(obtenerGuiaTuristico(identificacionGuia))
-                    .estadoReserva(EstadoReserva.PENDIENTE)
+                    .clienteReserva(obtenerClienteIdentificacion(identificacionCliente, 0))
+                    .paqueteTuristico(obtenerPaqueteTuristico(nombrePaqueteTuristico,0))
+                    .guiaTuristico(obtenerGuiaTuristico(identificacionGuia, 0))
+                    .estadoReserva(EstadoReserva.CONFIRMADA)
                     .build();
             LOGGER.log(Level.INFO, "El cliente de cedula "+identificacionCliente+" ha creado una reserva");
             listaReservas.add(newReserva);
@@ -332,13 +382,16 @@ public class AgenciaViajes {
     /*
     Metodos para la creacion de guias turisticos
     */
-    public GuiaTuristico obtenerGuiaTuristico(String identificacionGuia) {
-        for (GuiaTuristico guiaTuristico: listaGuiasTuristicos) {
-            if(guiaTuristico.getIdentificacion().equals(identificacionGuia)){
-                return guiaTuristico;
-            }
+    public GuiaTuristico obtenerGuiaTuristico(String identificacionGuia, int i) {
+        if(i == listaGuiasTuristicos.size()){
+            return null;
         }
-        return null;
+        if(listaGuiasTuristicos.get(i).getIdentificacion().equals(identificacionGuia)){
+            return listaGuiasTuristicos.get(i);
+        }
+        else{
+            return obtenerGuiaTuristico(identificacionGuia, i+1);
+        }
     }
 
     public void crearGuiaTuristico(String nombre, String identificacion, int experciencia, ArrayList<Lengua> lenguas) throws GuiaTuristicoVacioException, GuiaTuristicoExisteException, IOException {
@@ -346,7 +399,7 @@ public class AgenciaViajes {
                 experciencia<0 || lenguas == null){
             throw new GuiaTuristicoVacioException("El guía turistico que desea añadir tiene tiene campos vacios, por favor rellene todos los espacios");
         }
-        if(obtenerGuiaTuristico(identificacion)!=null){
+        if(obtenerGuiaTuristico(identificacion, 0)!=null){
             throw new GuiaTuristicoExisteException("El guía turistico que dese añadir ya existe");
         }else{
             GuiaTuristico guiaTuristico = new GuiaTuristico(nombre, identificacion, experciencia, lenguas);

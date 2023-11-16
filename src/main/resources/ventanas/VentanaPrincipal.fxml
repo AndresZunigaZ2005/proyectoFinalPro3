@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="ventanaPrincipal" prefHeight="333.0" prefWidth="493.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.pr3.controllers.VentanaPrincipalController">
+<BorderPane fx:id="ventanaPrincipal" prefHeight="370.0" prefWidth="653.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.pr3.controllers.VentanaPrincipalController">
    <center>
       <BorderPane fx:id="panelDinamico" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </center>
@@ -15,10 +15,15 @@
             <HBox alignment="CENTER" spacing="10.0">
                <children>
                   <Button fx:id="button" mnemonicParsing="false" onAction="#desplegableEvent" style="-fx-border-radius: 5em; -fx-background-radius: 5em;" />
-                  <Button fx:id="btn1" mnemonicParsing="false" onAction="#cambiarVentanaLogIn" text="Button" />
-                  <Button fx:id="btn2" mnemonicParsing="false" onAction="#cambiarVentanaSingUp" text="Button" />
-                  <Button fx:id="btn3" mnemonicParsing="false" onAction="#cambiarVentanaCreacionDestinos" text="Button" />
-                  <Button fx:id="btn4" mnemonicParsing="false" onAction="#cambiarVentanaCreacionGuia" text="Button" />
+                  <Button fx:id="btnIniciarSesion" mnemonicParsing="false" onAction="#cambiarVentanaLogIn" text="Button" />
+                  <Button fx:id="btnRegistrarClientes" mnemonicParsing="false" onAction="#cambiarVentanaSingUp" text="Button" />
+                  <Button fx:id="btnCrearDestinos" mnemonicParsing="false" onAction="#cambiarVentanaCreacionDestinos" text="Button" />
+                  <Button fx:id="btnCrearGuia" mnemonicParsing="false" onAction="#cambiarVentanaCreacionGuia" text="Button" />
+                  <Button fx:id="btnActualizarPerfil" mnemonicParsing="false" onAction="#cambiarVentanaActualizarPerfil" text="Button" />
+                  <Button fx:id="btnVerDestinos" mnemonicParsing="false" onAction="#cambiarVentanaVerDestinos" text="Button" />
+                  <Button fx:id="btnVerListaClientes" mnemonicParsing="false" onAction="#cambiarVentanaVerListaClientes" text="Button" />
+                  <Button fx:id="btnCrearPaquetes" mnemonicParsing="false" onAction="#cambiarVentanaCrearPaquetes" text="Button" />
+                  <Button fx:id="btnMostrarPaquetes" mnemonicParsing="false" onAction="#cambiarVentanaMostrarPaquetes" text="Button" />
                </children>
             </HBox>
          </children>

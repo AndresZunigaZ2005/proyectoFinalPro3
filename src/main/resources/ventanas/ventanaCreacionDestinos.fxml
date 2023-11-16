@@ -5,12 +5,13 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.pr3.controllers.VentanaCreacionDestinoController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="587.0" prefWidth="741.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.pr3.controllers.VentanaCreacionDestinoController">
     <center>
       <VBox alignment="CENTER" prefHeight="293.0" prefWidth="350.0" BorderPane.alignment="CENTER">
          <children>
@@ -28,17 +29,20 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label prefHeight="73.0" prefWidth="160.0" stylesheets="@style.css" text="Imagenes:" />
-                  <Button fx:id="btnBuscarImagenesDestino" mnemonicParsing="false" onAction="#buscarImagenes" prefHeight="42.0" prefWidth="217.0" stylesheets="@style.css" text="Seleccionar Imagenes" />
-                  <VBox prefHeight="89.0" prefWidth="15.0" />
-                  <Button fx:id="btnVerImagenes" mnemonicParsing="false" onAction="#VerImagenesAnadidas" prefHeight="39.0" prefWidth="139.0" stylesheets="@style.css" text="Ver Imagenes">
-                     <font>
-                        <Font size="5.0" />
-                     </font>
-                  </Button>
+                  <Label prefHeight="73.0" prefWidth="193.0" stylesheets="@style.css" text="Imagenes:" />
+                  <Button fx:id="btnBuscarImagenesDestino" mnemonicParsing="false" onAction="#buscarImagenes" prefHeight="42.0" prefWidth="242.0" stylesheets="@style.css" text="Seleccionar Imagenes" />
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="103.0" prefWidth="350.0">
+            <HBox alignment="CENTER" prefHeight="91.0" prefWidth="649.0">
+               <children>
+                  <Button fx:id="btnPrevImage" mnemonicParsing="false" onAction="#previousImage" />
+                  <ImageView fx:id="imgVerImagenes" fitHeight="150.0" fitWidth="185.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button fx:id="btnNextImage" mnemonicParsing="false" onAction="#nextImage" />
+                  <AnchorPane prefHeight="150.0" prefWidth="27.0" />
+                  <Button fx:id="btnEliminarImagen" mnemonicParsing="false" onAction="#deleteCurrentImage" stylesheets="@style.css" text="Eliminar Imagen" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Label prefHeight="65.0" prefWidth="177.0" stylesheets="@style.css" text="Clima:" />
                   <ComboBox fx:id="comboBoxClimaDestino" prefHeight="25.0" prefWidth="261.0" promptText="Clima del Destino" stylesheets="@style.css">
@@ -48,12 +52,11 @@
                      </styleClass></ComboBox>
                </children>
             </HBox>
-            <Button fx:id="btnAnadirDestino" mnemonicParsing="false" onAction="#AnadirDestino" stylesheets="@style.css" text="Añadir Destino" />
          </children>
       </VBox>
    </center>
    <right>
-      <VBox prefHeight="304.0" prefWidth="46.0" BorderPane.alignment="CENTER" />
+      <VBox prefHeight="455.0" prefWidth="33.0" BorderPane.alignment="CENTER" />
    </right>
    <left>
       <VBox prefHeight="300.0" prefWidth="59.0" BorderPane.alignment="CENTER" />
@@ -66,6 +69,9 @@
       </HBox>
    </top>
    <bottom>
-      <HBox prefHeight="25.0" prefWidth="477.0" BorderPane.alignment="CENTER" />
+      <HBox alignment="CENTER" prefHeight="25.0" prefWidth="477.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnAnadirDestino" mnemonicParsing="false" onAction="#AnadirDestino" stylesheets="@style.css" text="Añadir Destino" />
+         </children></HBox>
    </bottom>
 </BorderPane>

@@ -1,5 +1,6 @@
 package co.edu.uniquindio.pr3.controllers;
 
+import co.edu.uniquindio.pr3.model.AgenciaViajes;
 import javafx.animation.Transition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,6 +32,21 @@ public class VentanaPrincipalController implements Initializable {
 
     @FXML
     private Button btnCrearGuia = new Button();
+
+    @FXML
+    private Button btnActualizarPerfil = new Button();
+
+    @FXML
+    private Button btnVerDestinos = new Button();
+
+    @FXML
+    private Button btnVerListaClientes = new Button();
+
+    @FXML
+    private Button btnCrearPaquetes = new Button();
+
+    @FXML
+    private Button btnMostrarPaquetes = new Button();
 
     @FXML
     private VBox menu;
@@ -228,6 +244,11 @@ public class VentanaPrincipalController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        System.out.println("si se inicializo");
+        /*btnCrearPaquetes.setVisible(false);
+        btnVerListaClientes.setVisible(false);
+        btnActualizarPerfil.setVisible(false);
+        btnCrearGuia.setVisible(false);
+        btnCrearDestinos.setVisible(false);*/
     }
 }

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="541.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.pr3.controllers.VentanaActualizarClienteController">
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="263.9999974568685" minHeight="10.0" prefHeight="134.66667938232422" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="236.0" minHeight="10.0" prefHeight="100.66665395100912" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="147.99996948242188" minHeight="10.0" prefHeight="96.3333740234375" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="imageViewPerfil" fitHeight="159.0" fitWidth="204.0" pickOnBounds="true" preserveRatio="true" />
+                  <Hyperlink fx:id="btnActualizarFoto" onAction="#actualizarFoto" text="Actualiza tu foto de perfil" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="140.0" stylesheets="@style.css" text="Identificacion:" />
+                  <TextField fx:id="txtFieldIdentificacion" prefHeight="33.0" prefWidth="241.0" stylesheets="@style.css" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="115.0" stylesheets="@style.css" text="Nombre:" />
+                  <TextField fx:id="txtFieldNombre" prefHeight="33.0" prefWidth="241.0" stylesheets="@style.css" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="135.0" stylesheets="@style.css" text="Correo:" />
+                  <TextField fx:id="txtFieldCorreo" prefHeight="33.0" prefWidth="250.0" stylesheets="@style.css" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="115.0" stylesheets="@style.css" text="Direccion" />
+                  <TextField fx:id="txtFieldDireccion" prefHeight="33.0" prefWidth="241.0" stylesheets="@style.css" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="135.0" stylesheets="@style.css" text="Telefono" />
+                  <TextField fx:id="txtFieldTelefono" prefHeight="33.0" prefWidth="250.0" stylesheets="@style.css" />
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+   </center>
+   <top>
+      <HBox alignment="CENTER" prefHeight="67.0" prefWidth="810.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label stylesheets="@style.css" text="Actualiza tu perfil" />
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="67.0" prefWidth="810.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnActualizarPerfil" mnemonicParsing="false" onAction="#actualizarPerfil" stylesheets="@style.css" text="Actualizar Perfil" />
+         </children>
+      </HBox>
+   </bottom>
+   <left>
+      <VBox prefHeight="341.0" prefWidth="21.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <VBox prefHeight="433.0" prefWidth="28.0" BorderPane.alignment="CENTER" />
+   </right>
+</BorderPane>

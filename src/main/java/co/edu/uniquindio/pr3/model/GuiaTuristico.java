@@ -10,7 +10,6 @@ import java.util.ArrayList;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @EqualsAndHashCode
 @SuperBuilder
 
@@ -23,5 +22,10 @@ public class GuiaTuristico extends Persona implements Serializable {
         super(nombre,identificacion);
         this.experiencia = experiencia;
         this.listaLenguas = lenguas;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }

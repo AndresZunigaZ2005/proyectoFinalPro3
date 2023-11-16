@@ -1,40 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="1014.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.pr3.controllers.VentanaVerListaClientesController">
     <top>
-      <HBox prefHeight="71.0" prefWidth="1014.0" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER_LEFT" prefHeight="71.0" prefWidth="1014.0" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" prefHeight="71.0" prefWidth="115.0" text="Filtros:">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Label prefHeight="82.0" prefWidth="179.0" text="Nombre">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
+            <Label prefHeight="27.0" prefWidth="122.0" stylesheets="@style.css" text="Filtros:" />
+            <Label prefHeight="27.0" prefWidth="160.0" stylesheets="@style.css" text="Ingrese el Nombre" />
+            <TextField fx:id="txtFieldFIltroNombre" onAction="#filtrarNombre" prefHeight="33.0" prefWidth="187.0" stylesheets="@style.css" />
+            <AnchorPane prefHeight="71.0" prefWidth="30.0" />
+            <Label prefHeight="27.0" prefWidth="130.0" stylesheets="@style.css" text="Identificación" />
+            <TextField fx:id="txtFieldFIltroIdentificacion" onAction="#filtrarIdentificacion" prefHeight="33.0" prefWidth="193.0" stylesheets="@style.css" />
+            <AnchorPane prefHeight="71.0" prefWidth="24.0" />
+            <Button fx:id="btnLimpiarFiltros" mnemonicParsing="false" onAction="#limpiarFiltros" prefHeight="39.0" prefWidth="147.0" stylesheets="@style.css" text="Limpiar filtros" />
          </children></HBox>
    </top>
    <center>
       <ScrollPane prefHeight="587.0" prefWidth="1071.0" BorderPane.alignment="CENTER">
          <content>
-            <TableView fx:id="tableViewClientes" prefHeight="531.0" prefWidth="1013.0" styleClass="table-view">
+            <TableView fx:id="tableViewClientes" prefHeight="531.0" prefWidth="1006.0" styleClass="table-view">
               <columns>
-                <TableColumn fx:id="columnFotoPerfil" prefWidth="132.0000001192093" text="Foto de Perfil" />
-                <TableColumn fx:id="columnNombre" prefWidth="182.6666259765625" text="Nombre" />
-                  <TableColumn fx:id="columnID" prefWidth="101.33331298828125" text="Identificación" />
-                  <TableColumn fx:id="columnCorreo" prefWidth="220.666748046875" text="Correo " />
-                  <TableColumn fx:id="columnTelefono" prefWidth="148.66668701171875" text="Telefono" />
-                  <TableColumn fx:id="columnDireccion" prefWidth="227.3333740234375" text="Dirección" />
+                <TableColumn fx:id="columnNombre" prefWidth="184.0000001192093" text="Nombre" />
+                  <TableColumn fx:id="columnID" prefWidth="162.66665649414062" text="Identificación" />
+                  <TableColumn fx:id="columnCorreo" prefWidth="246.00003051757812" text="Correo " />
+                  <TableColumn fx:id="columnTelefono" prefWidth="180.6666259765625" text="Telefono" />
+                  <TableColumn fx:id="columnDireccion" prefWidth="241.3333740234375" text="Dirección" />
               </columns>
             </TableView>
          </content>

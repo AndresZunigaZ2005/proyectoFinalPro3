@@ -44,33 +44,33 @@
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="97.33334350585938" minHeight="10.0" prefHeight="79.33334350585938" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="124.66665649414062" minHeight="10.0" prefHeight="124.66665649414062" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label prefHeight="27.0" prefWidth="103.0" stylesheets="@style.css" text="Nombre: " />
-                  <TextField fx:id="txtFieldNombre" prefHeight="25.0" prefWidth="242.0" stylesheets="@style.css" />
+                  <Label prefHeight="27.0" prefWidth="138.0" stylesheets="@style.css" text="Nombre: " />
+                  <TextField fx:id="txtFieldNombre" prefHeight="33.0" prefWidth="207.0" stylesheets="@style.css" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
                <children>
-                  <Label prefHeight="27.0" prefWidth="103.0" stylesheets="@style.css" text="Duración:" />
-                  <TextField fx:id="txtFieldDuracion" prefHeight="25.0" prefWidth="242.0" stylesheets="@style.css" />
+                  <Label prefHeight="27.0" prefWidth="144.0" stylesheets="@style.css" text="Duración (Días):" />
+                  <TextField fx:id="txtFieldDuracion" prefHeight="33.0" prefWidth="203.0" stylesheets="@style.css" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" GridPane.rowIndex="2">
                <children>
-                  <Label prefHeight="27.0" prefWidth="103.0" stylesheets="@style.css" text="Servicios:" />
-                  <TextArea fx:id="txtAreaServicios" prefHeight="102.0" prefWidth="242.0" styleClass="text-field" stylesheets="@style.css" />
+                  <Label prefHeight="27.0" prefWidth="141.0" stylesheets="@style.css" text="Servicios:" />
+                  <TextArea fx:id="txtAreaServicios" prefHeight="125.0" prefWidth="206.0" styleClass="text-field" stylesheets="@style.css" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" GridPane.rowIndex="3">
                <children>
-                  <Label prefHeight="27.0" prefWidth="103.0" stylesheets="@style.css" text="Precio: " />
-                  <TextField fx:id="txtFieldPrecio" prefHeight="25.0" prefWidth="242.0" stylesheets="@style.css" />
+                  <Label prefHeight="27.0" prefWidth="128.0" stylesheets="@style.css" text="Precio: " />
+                  <TextField fx:id="txtFieldPrecio" prefHeight="33.0" prefWidth="219.0" stylesheets="@style.css" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
