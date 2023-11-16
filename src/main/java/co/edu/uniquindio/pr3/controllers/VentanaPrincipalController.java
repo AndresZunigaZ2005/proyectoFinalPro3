@@ -18,19 +18,19 @@ import java.util.ResourceBundle;
 public class VentanaPrincipalController implements Initializable {
 
     @FXML
-    private Button btn1;
+    private Button btnIniciarSesion = new Button();
 
     @FXML
     private Button button;
 
     @FXML
-    private Button btn2;
+    private Button btnRegistrarClientes = new Button();
 
     @FXML
-    private Button btn3;
+    private Button btnCrearDestinos = new Button();
 
     @FXML
-    private Button btn4;
+    private Button btnCrearGuia = new Button();
 
     @FXML
     private VBox menu;
@@ -43,6 +43,23 @@ public class VentanaPrincipalController implements Initializable {
 
     private boolean estaDesplegado= false;
 
+    private SingletonController singletonController = SingletonController.getInstance();
+
+    private AgenciaViajes agenciaViajes = AgenciaViajes.getInstance();
+
+    private static VentanaPrincipalController instance;
+
+
+    public VentanaPrincipalController() {
+
+    }
+
+    public static VentanaPrincipalController getInstance() {
+        if (instance == null) {
+            instance = new VentanaPrincipalController();
+        }
+        return instance;
+    }
 
     @FXML
     void desplegableEvent(ActionEvent event) {

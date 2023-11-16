@@ -36,6 +36,7 @@ public class InicioSesionController implements Initializable {
 
     private SingletonController singletonController = SingletonController.getInstance();
     @FXML
+
     void IniciarSesion(ActionEvent event) {
         Cliente cliente = agenciaViajes.obtenerCliente(usernameField.getText());
         if(cliente == null){
