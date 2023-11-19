@@ -23,6 +23,10 @@ public class Reserva implements Serializable {
     private GuiaTuristico guiaTuristico;
     private EstadoReserva estadoReserva;
 
+    public void cambiarEstadoReserva(EstadoReserva nuevoEstado) {
+        this.estadoReserva = nuevoEstado;
+    }
+
     public void cancelarReserva() {
         if (estadoReserva == EstadoReserva.PASADA) {
             estadoReserva = EstadoReserva.CANCELADA;
