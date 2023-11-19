@@ -49,7 +49,7 @@ public class AgenciaViajes {
     private static final int PUERTO = 1234;
 
     /*
-    Constructores
+    Constructores de agencia de viajes
      */
 
     private AgenciaViajes() {
