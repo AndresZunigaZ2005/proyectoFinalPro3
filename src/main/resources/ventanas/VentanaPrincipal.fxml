@@ -24,6 +24,7 @@
                   <Button fx:id="btnVerListaClientes" mnemonicParsing="false" onAction="#cambiarVentanaVerListaClientes" text="Button" />
                   <Button fx:id="btnCrearPaquetes" mnemonicParsing="false" onAction="#cambiarVentanaCrearPaquetes" text="Button" />
                   <Button fx:id="btnMostrarPaquetes" mnemonicParsing="false" onAction="#cambiarVentanaMostrarPaquetes" text="Button" />
+                  <Button fx:id="btnMostrarReservasCliente" mnemonicParsing="false" onAction="#cambiarVentanaMostrarReservasCliente" text="Button" />
                </children>
             </HBox>
          </children>

@@ -14,10 +14,7 @@ import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Properties;
-import java.util.Scanner;
+import java.util.*;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -47,6 +44,9 @@ public class AgenciaViajes {
 
     //Variable para el SINGLETON
     private static AgenciaViajes agenciaViajes;
+
+    private static final String HOST = "localhost";
+    private static final int PUERTO = 1234;
 
     /*
     Constructores
@@ -302,6 +302,9 @@ public class AgenciaViajes {
         } else if (ChronoUnit.DAYS.between(LocalDateTime.now(), fecha) <= 1) {
             throw new PaqueteUnoDiferenciaException("El paquete turistico debe de ser creado con un día de anticipación");
         } else {
+            HashMap<String, Integer> map = new HashMap<>();
+            map.put("Calificaciones", 0);
+            map.put("Cantidad de Calificaciones", 0);
             PaqueteTuristico p = new PaqueteTuristico.PaqueteTuristicoBuilder()
                     .nombre(nombre)
                     .duracion(duracion)
@@ -310,7 +313,9 @@ public class AgenciaViajes {
                     .cupoMaximo(cupoMaximo)
                     .fecha(fecha)
                     .listaDestinos(listaDestinos)
+                    .calificaciones(map)
                     .build();
+
             LOGGER.log(Level.INFO, "El paquete turistico "+nombre+" se ha creado");
             listaPaquetesTuristicos.add(p);
             escribirPaqueteTuristico();
@@ -357,11 +362,10 @@ public class AgenciaViajes {
      */
     public void crearReserva(LocalDateTime fechaViaje, int cantPersonas,
             String identificacionCliente, String nombrePaqueteTuristico, String identificacionGuia) throws ReservaExisteException,ReservaVaciaException{
-        if(fechaViaje == null || cantPersonas<=0 || identificacionCliente == null || identificacionCliente.isBlank() ||
-                identificacionGuia==null || identificacionGuia.isBlank()){
+        if(fechaViaje == null || cantPersonas<=0 || identificacionCliente == null || identificacionCliente.isBlank()){
             throw new ReservaVaciaException("La reserva que desea crear es vacia, por favor, llene todos los campos");
         }
-        if(obtenerReserva(identificacionCliente, fechaViaje) != null){
+        if(obtenerReserva(identificacionCliente, fechaViaje) != null && obtenerReserva(identificacionCliente, fechaViaje).getEstadoReserva().equals(EstadoReserva.CONFIRMADA)){
             throw new ReservaExisteException("La reserva que desea crear ya existe, por favor intente de nuevo");
         }else{
             Reserva newReserva = new Reserva.ReservaBuilder()
@@ -377,6 +381,16 @@ public class AgenciaViajes {
             listaReservas.add(newReserva);
             escribirReservas();
         }
+    }
+
+    public ArrayList<Reserva> buscarReservaCliente(Cliente cliente, ArrayList<Reserva> lista,  int i){
+        if(i == listaReservas.size()){
+            return lista;
+        }
+        if(listaReservas.get(i).getClienteReserva().equals(cliente)){
+            lista.add(listaReservas.get(i));
+        }
+        return buscarReservaCliente(cliente, lista, i+1);
     }
 
     /*
@@ -473,6 +487,19 @@ public class AgenciaViajes {
         }
     }
 
+    public void calificarPaquete(PaqueteTuristico paqueteTuristico, int calificacion){
+        HashMap<String, Integer> mapaNotas = paqueteTuristico.getCalificaciones();
+        mapaNotas.put("Calificaciones", mapaNotas.get("Calificaciones") + calificacion);
+        mapaNotas.put("Cantidad de Calificaciones", mapaNotas.get("Cantidad de Calificaciones")+1);
+        paqueteTuristico.setCalificaciones(mapaNotas);
+    }
+
+    public void calificarGuia(GuiaTuristico guiaTuristico, int calificacion){
+        HashMap<String, Integer> mapaNotas = guiaTuristico.getCalificacionesGuia();
+        mapaNotas.put("sumaCalificaciones", mapaNotas.get("sumaCalificaciones") + calificacion);
+        mapaNotas.put("cantidadCalificaciones", mapaNotas.get("cantidadCalificaciones")+1);
+        guiaTuristico.setCalificacionesGuia(mapaNotas);
+    }
     /**
      * leer datos
      */

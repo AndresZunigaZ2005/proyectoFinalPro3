@@ -5,6 +5,7 @@ import lombok.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 @Getter
 @Setter
@@ -21,9 +22,14 @@ public class PaqueteTuristico implements Serializable {
     private int cupoMaximo;
     private LocalDateTime fecha;
     private ArrayList<Destino> listaDestinos;
+    private HashMap<String, Integer> calificaciones;
 
     @Override
     public String toString() {
         return nombre;
+    }
+
+    public LocalDateTime getFecha() {
+        return this.fecha;
     }
 }

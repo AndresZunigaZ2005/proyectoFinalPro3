@@ -157,6 +157,7 @@ public class VentanaCreacionDestinoController implements Initializable {
 
     @FXML
     private void mostrarImagenActual() {
+        
         if (!listaImagenes.isEmpty() && indice >= 0 && indice < listaImagenes.size()) {
             Image imagenAcual = listaImagenes.get(indice);
             imgVerImagenes.setImage(imagenAcual);

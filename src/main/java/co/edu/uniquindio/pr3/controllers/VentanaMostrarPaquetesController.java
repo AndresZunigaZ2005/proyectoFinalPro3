@@ -1,9 +1,8 @@
 package co.edu.uniquindio.pr3.controllers;
 
-import co.edu.uniquindio.pr3.model.AgenciaViajes;
-import co.edu.uniquindio.pr3.model.Destino;
-import co.edu.uniquindio.pr3.model.GuiaTuristico;
-import co.edu.uniquindio.pr3.model.PaqueteTuristico;
+import co.edu.uniquindio.pr3.exceptions.ReservaExisteException;
+import co.edu.uniquindio.pr3.exceptions.ReservaVaciaException;
+import co.edu.uniquindio.pr3.model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,10 +13,13 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import lombok.SneakyThrows;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class VentanaMostrarPaquetesController implements Initializable {
 
@@ -78,23 +80,28 @@ public class VentanaMostrarPaquetesController implements Initializable {
 
     private ObservableList<GuiaTuristico> listaGuiasTuristicos;
 
-    private ObservableList<String> listaImagenesSeleccionadaListView;
+    private List<Image> listaImagenes= new ArrayList<>();
 
-    private ArrayList<Image> listaImagenesSeleccionadaListViewImages;
+    private List<File> imagenes;
+
+    private final String RUTA_PROPIEDADES = "src/main/resources/config/textos.properties";
+
+    private Properties prop;
+    private FileInputStream input;
 
     private int indice = 0;
     @FXML
     void nextImageDestino(ActionEvent event) {
-        if (!listaImagenesSeleccionadaListView.isEmpty()) {
-            indice = (indice + 1) % listaImagenesSeleccionadaListView.size();
+        if (!listaImagenes.isEmpty()) {
+            indice = (indice + 1) % listaImagenes.size();
             mostrarImagenActual();
         }
     }
 
     @FXML
     void prevImageDestino(ActionEvent event) {
-        if (!listaImagenesSeleccionadaListView.isEmpty()) {
-            indice = (indice - 1 + listaImagenesSeleccionadaListView.size()) % listaImagenesSeleccionadaListView.size();
+        if (!listaImagenes.isEmpty()) {
+            indice = (indice - 1 + listaImagenes.size()) % listaImagenes.size();
             mostrarImagenActual();
         }
     }
@@ -117,42 +124,46 @@ public class VentanaMostrarPaquetesController implements Initializable {
         listViewDestinos.setItems(destinos);
         listViewDestinos.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
-                // Obtener la instancia de MiClase seleccionada
+
                 Destino destino = listViewDestinos.getSelectionModel().getSelectedItem();
-
-                ObservableList<String> listaImagenes = FXCollections.observableArrayList(destino.getImagenes());
-
-                listaImagenesSeleccionadaListView = listaImagenes;
+                obtenerImagenes(destino);
             }
         });
     }
 
-    private void cambiarFormatoImagenes(int i){
-        if(i == listaImagenesSeleccionadaListView.size()){
 
-        }else {
-            String path = listaImagenesSeleccionadaListView.get(i);
-            String pathSplt[] = path.split("resources");
-            System.out.println(pathSplt[1]);
-            Image nuevaImagen = new Image(getClass().getResourceAsStream(pathSplt[1]));
-            listaImagenesSeleccionadaListViewImages.add(nuevaImagen);
-            cambiarFormatoImagenes(i + 1);
+    private void obtenerImagenes(Destino destino){
+         File [] files = new File("src/main/resources/persistencia/FotosDestinos").listFiles();
+
+         for (File file : files){
+             System.out.println(file);
+             System.out.println(file.getPath());
+             System.out.println(file.getName());
+             System.out.println(file.toURI().toString());
+         }
+
+        imagenes= Arrays.asList(files);
+        for (File archivo: imagenes) {
+            System.out.println(archivo);
+            if(archivo.getName().contains(destino.getNombre())){
+                Image imagen= new Image(archivo.toURI().toString());
+                listaImagenes.add(imagen);
+            }
         }
     }
 
+    @FXML
     private void mostrarImagenActual() {
-        if (!listaImagenesSeleccionadaListViewImages.isEmpty() && indice >= 0 && indice < listaImagenesSeleccionadaListViewImages.size()) {
-            Image imagenAcual = listaImagenesSeleccionadaListViewImages.get(indice);
+
+        if (!listaImagenes.isEmpty() && indice >= 0 && indice < listaImagenes.size()) {
+            Image imagenAcual = listaImagenes.get(indice);
             imageViewDestinos.setImage(imagenAcual);
         } else {
-            imageViewDestinos.setImage(null); //No hay imagenes en la lista
+            imageViewDestinos.setImage(null); //No hau imagenes en la lista
         }
     }
 
-    private void actualizarListView() {
-        ObservableList<Destino> observableListaIdiomas = FXCollections.observableArrayList(destinos);
-        listViewDestinos.setItems(observableListaIdiomas);
-    }
+
 
     @FXML
     void filtrarPredeterminados(ActionEvent event){
@@ -172,9 +183,67 @@ public class VentanaMostrarPaquetesController implements Initializable {
         return ponerDestinoPaquete(paqueteTuristico, destinos, i+1);
     }
 
+    @FXML
+    void crearReserva(ActionEvent event) {
+        if (singletonController.getCliente()!=null) {
+            PaqueteTuristico p = comboBoxPaquete.getValue();
+            GuiaTuristico guia = comboBoxSelectGuia.getValue();
+            try {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+                String cuerpoCorreo = prop.getProperty("EmailMessageReservation");
+
+                cuerpoCorreo = cuerpoCorreo.replace("yyyy-MM-dd", LocalDateTime.now().format(formatter));
+                cuerpoCorreo = cuerpoCorreo.replace("@¡?¨*[_:;]!yyyy-MM-dd HH:mm:ss", p.getFecha().format(formatter));
+                System.out.println(p.getFecha().format(formatter) + "fecha sin formatear" + p.getFecha());
+                cuerpoCorreo = cuerpoCorreo.replace("HH:mm:ss", "");
+                cuerpoCorreo = cuerpoCorreo.replace("[Número de Personas: X]", txtFieldCuposDisp.getText());
+                cuerpoCorreo = cuerpoCorreo.replace("Cliente.getNombre()", singletonController.getCliente().getNombre());
+                cuerpoCorreo = cuerpoCorreo.replace("PaqueteTuristico.getNombre()", p.getNombre());
+
+                if (guia != null) {
+                    cuerpoCorreo= cuerpoCorreo.replace("GuiaTuristico.getNombre()", guia.getNombre());
+                    agenciaViajes.crearReserva(p.getFecha(), Integer.parseInt(txtFieldCuposDisp.getText()), singletonController.getCliente().getIdentificacion(), p.getNombre(), guia.getIdentificacion());
+
+                } else {
+                    cuerpoCorreo= cuerpoCorreo.replace("Guía Turístico: [Nombre del Guía Turístico: GuiaTuristico.getNombre()]", "");
+                    agenciaViajes.crearReserva(p.getFecha(), Integer.parseInt(txtFieldCuposDisp.getText()), singletonController.getCliente().getIdentificacion(), p.getNombre(), null);
+                }
+                showAlert(Alert.AlertType.ERROR, prop.getProperty("information"), prop.getProperty("information"), prop.getProperty("ReservationCreatedSuccessfully"));
+                String finalCuerpoCorreo = cuerpoCorreo;
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Mail.mail(prop.getProperty("ThanksForTheConfidenceMessage"), finalCuerpoCorreo, singletonController.getCliente().getCorreo());
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+                }).start();
+                p.setCupoMaximo(p.getCupoMaximo() - (Integer.parseInt(txtFieldCuposDisp.getText())));
+                agenciaViajes.escribirPaqueteTuristico();
+            } catch (ReservaExisteException | ReservaVaciaException e) {
+                showAlert(Alert.AlertType.ERROR, prop.getProperty("Error"), prop.getProperty("Error"), e.getMessage());
+            }
+        }
+        else{
+            showAlert(Alert.AlertType.ERROR, prop.getProperty("information"), prop.getProperty("information"), "Inicie Sesion Primero");
+        }
+    }
+    public void showAlert(Alert.AlertType alertType, String title, String header, String message) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
     @SneakyThrows
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        prop = new Properties();
+        input = new FileInputStream(RUTA_PROPIEDADES);
+        prop.load(input);
         Slider slider = new Slider(0, 5, 2.5);
         slider.setShowTickMarks(true);
         slider.setMajorTickUnit(0.5);
@@ -189,18 +258,16 @@ public class VentanaMostrarPaquetesController implements Initializable {
             slider.setValue(roundedValue);
         });
 
-        listaImagenesSeleccionadaListView = FXCollections.observableArrayList();
+
         listaGuiasTuristicos = FXCollections.observableArrayList(agenciaViajes.getListaGuiasTuristicos());
         listaDestinosOriginal = FXCollections.observableArrayList(agenciaViajes.getListaDestinos());
         destinos = FXCollections.observableArrayList();
         listaPaquetes = FXCollections.observableArrayList(agenciaViajes.getListaPaquetesTuristicos());
-        listaImagenesSeleccionadaListViewImages = new ArrayList<>();
-
+        imagenes= new ArrayList<>();
 
         comboBoxPaquete.setItems(listaPaquetes);
         comboBoxFiltroDestino.setItems(listaDestinosOriginal);
         comboBoxSelectGuia.setItems(listaGuiasTuristicos);
-        //imageViewDestinos.setImage(new Image(getClass().getResourceAsStream("/Imagenes/ImagenIconoAvion.jpg")));
     }
 
 }

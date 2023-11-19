@@ -49,6 +49,9 @@ public class VentanaPrincipalController implements Initializable {
     private Button btnMostrarPaquetes = new Button();
 
     @FXML
+    private Button btnMostrarReservasCliente = new Button();
+
+    @FXML
     private VBox menu;
 
     @FXML
@@ -208,6 +211,18 @@ public class VentanaPrincipalController implements Initializable {
         }
     }
 
+    @FXML
+    void cambiarVentanaMostrarReservasCliente(ActionEvent event) {
+        try {
+            System.out.println("se presiono el boton");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ventanas/VentanaMostrarReservas.fxml"));
+            Parent nuevaVentana= loader.load();
+            panelDinamico.setCenter(nuevaVentana);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public Button getBtnIniciarSesion() {
         return btnIniciarSesion;
     }
@@ -240,6 +255,9 @@ public class VentanaPrincipalController implements Initializable {
         return btnCrearPaquetes;
     }
 
+    public Button getBtnMostrarReservasCliente() {
+        return btnMostrarReservasCliente;
+    }
 
 
     @Override

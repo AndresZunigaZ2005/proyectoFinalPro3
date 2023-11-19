@@ -102,9 +102,9 @@
             </GridPane>
             <HBox alignment="CENTER" prefHeight="176.0" prefWidth="846.0">
                <children>
-                  <Button fx:id="btnPreviousImage" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#showPreviousImage" style="-fx-background-color: FFFFFF;" />
+                  <Button fx:id="btnPreviousImage" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#showPreviousImage" style="-fx-background-color: FFFFFF;" stylesheets="@style.css" />
                   <ImageView fx:id="imageViewFotosDestinos" fitHeight="178.0" fitWidth="293.0" pickOnBounds="true" preserveRatio="true" />
-                  <Button fx:id="btnNextImage" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#showNextImage" style="-fx-background-color: FFFFFF;" />
+                  <Button fx:id="btnNextImage" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#showNextImage" style="-fx-background-color: FFFFFF;" stylesheets="@style.css" />
                </children>
             </HBox>
          </children>

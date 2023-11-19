@@ -102,7 +102,17 @@ public class RegistroClienteController implements Initializable {
             mensajeRegistroExitoso = mensajeRegistroExitoso.replace("{Direccion}", direccion);
 
             agenciaViajes.anadirCliente(nombre, idetificacion, correo, telefono, direccion, contrasena, prop.getProperty("RUTA_IMAGENES_CLIENTE"));
-            Mail.mail(prop.getProperty("issueEmailSuccesfulRegistration") , mensajeRegistroExitoso ,correo);
+            String finalMensajeRegistroExitoso = mensajeRegistroExitoso;
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Mail.mail(prop.getProperty("issueEmailSuccesfulRegistration") , finalMensajeRegistroExitoso,correo);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }).start();
             if (selectedImage != null) {
                 // Guardar la imagen en la carpeta deseada
                 File outputFile = new File(prop.getProperty("RUTA_IMAGENES_CLIENTE")+identificacionField.getText()+".png");
@@ -131,8 +141,6 @@ public class RegistroClienteController implements Initializable {
             contrasenaField.clear();
 
 
-        } catch (IOException e) {
-            showAlert(Alert.AlertType.ERROR, prop.getProperty("error") , prop.getProperty("error") ,prop.getProperty("errorSendingEmailRegistration"));
         } catch (ClienteExisteException | ClienteVacioException e) {
             showAlert(Alert.AlertType.ERROR, prop.getProperty("error"), prop.getProperty("error"), e.getMessage());
         }

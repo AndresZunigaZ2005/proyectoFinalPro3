@@ -90,6 +90,7 @@ public class VentanaCreacionPaquetesController implements Initializable {
 
         try {
             agenciaViajes.crearPaqueteTuristico(nombre, duracion, servicios, precio, cupoMaximo, fecha, pasarStringDestino());
+            showAlert(Alert.AlertType.ERROR, prop.getProperty("information"), prop.getProperty("information"), "Se ha creado el paquete turistico");
         } catch (PaqueteVacioException | PaqueteUnoDiferenciaException | PaqueteExisteException e) {
             showAlert(Alert.AlertType.ERROR, prop.getProperty("Error"), prop.getProperty("Error"), e.getMessage());
         }
@@ -140,8 +141,8 @@ public class VentanaCreacionPaquetesController implements Initializable {
 
         comboBoxDestinos.getItems().addAll(listaDestinosCombo);
 
-        spinnerHora = new Spinner<>(0, 24, 0);
-        spinnerMin = new Spinner<>(0, 59, 0);
+        spinnerHora = new Spinner<Integer>(0, 24, 0);
+        spinnerMin = new Spinner<Integer>(0, 59, 0);
     }
 
     public void showAlert(Alert.AlertType alertType, String title, String header, String message) {
