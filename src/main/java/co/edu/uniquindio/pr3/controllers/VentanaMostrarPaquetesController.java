@@ -84,6 +84,8 @@ public class VentanaMostrarPaquetesController implements Initializable {
 
     private List<File> imagenes;
 
+    private ObservableList<String> comboPredeterminado;
+
     private final String RUTA_PROPIEDADES = "src/main/resources/config/textos.properties";
 
     private Properties prop;
@@ -167,7 +169,16 @@ public class VentanaMostrarPaquetesController implements Initializable {
 
     @FXML
     void filtrarPredeterminados(ActionEvent event){
-
+        if (comboBoxFIltro.getValue().equals("Precio de mayor a menor")){
+            agenciaViajes.ordernarListaPaquetesMayorMenor();
+            ObservableList<PaqueteTuristico> p = FXCollections.observableArrayList(agenciaViajes.getListaPaquetesTuristicos());
+            comboBoxPaquete.setItems(p);
+        }
+        else{
+            agenciaViajes.ordernarListaPaquetesMenorMayor();
+            ObservableList<PaqueteTuristico> p = FXCollections.observableArrayList(agenciaViajes.getListaPaquetesTuristicos());
+            comboBoxPaquete.setItems(p);
+        }
     }
 
     @FXML
@@ -193,7 +204,7 @@ public class VentanaMostrarPaquetesController implements Initializable {
                 String cuerpoCorreo = prop.getProperty("EmailMessageReservation");
 
                 cuerpoCorreo = cuerpoCorreo.replace("yyyy-MM-dd", LocalDateTime.now().format(formatter));
-                cuerpoCorreo = cuerpoCorreo.replace("@¡?¨*[_:;]!yyyy-MM-dd HH:mm:ss", p.getFecha().format(formatter));
+                cuerpoCorreo = cuerpoCorreo.replace("ingrese la fecha del paquete", p.getFecha().format(formatter));
                 System.out.println(p.getFecha().format(formatter) + "fecha sin formatear" + p.getFecha());
                 cuerpoCorreo = cuerpoCorreo.replace("HH:mm:ss", "");
                 cuerpoCorreo = cuerpoCorreo.replace("[Número de Personas: X]", txtFieldCuposDisp.getText());
@@ -208,7 +219,7 @@ public class VentanaMostrarPaquetesController implements Initializable {
                     cuerpoCorreo= cuerpoCorreo.replace("Guía Turístico: [Nombre del Guía Turístico: GuiaTuristico.getNombre()]", "");
                     agenciaViajes.crearReserva(p.getFecha(), Integer.parseInt(txtFieldCuposDisp.getText()), singletonController.getCliente().getIdentificacion(), p.getNombre(), null);
                 }
-                showAlert(Alert.AlertType.ERROR, prop.getProperty("information"), prop.getProperty("information"), prop.getProperty("ReservationCreatedSuccessfully"));
+                showAlert(Alert.AlertType.INFORMATION, prop.getProperty("information"), prop.getProperty("information"), prop.getProperty("ReservationCreatedSuccessfully"));
                 String finalCuerpoCorreo = cuerpoCorreo;
                 new Thread(new Runnable() {
                     @Override
@@ -262,12 +273,14 @@ public class VentanaMostrarPaquetesController implements Initializable {
         listaGuiasTuristicos = FXCollections.observableArrayList(agenciaViajes.getListaGuiasTuristicos());
         listaDestinosOriginal = FXCollections.observableArrayList(agenciaViajes.getListaDestinos());
         destinos = FXCollections.observableArrayList();
-        listaPaquetes = FXCollections.observableArrayList(agenciaViajes.getListaPaquetesTuristicos());
+        listaPaquetes = FXCollections.observableArrayList(agenciaViajes.mostrarPaquetesFechaDisponible(0, new ArrayList<PaqueteTuristico>()));
         imagenes= new ArrayList<>();
 
         comboBoxPaquete.setItems(listaPaquetes);
         comboBoxFiltroDestino.setItems(listaDestinosOriginal);
         comboBoxSelectGuia.setItems(listaGuiasTuristicos);
+        comboBoxFIltro.setItems(comboPredeterminado);
+        comboPredeterminado = FXCollections.observableArrayList("Precio de mayor a menor", "Precio de menor a mayor");
     }
 
 }

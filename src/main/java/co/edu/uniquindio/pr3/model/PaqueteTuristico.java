@@ -13,7 +13,7 @@ import java.util.HashMap;
 @AllArgsConstructor
 @EqualsAndHashCode
 @Builder
-public class PaqueteTuristico implements Serializable {
+public class PaqueteTuristico implements Serializable, Comparable<PaqueteTuristico>{
 
     private String nombre;
     private int duracion;
@@ -31,5 +31,14 @@ public class PaqueteTuristico implements Serializable {
 
     public LocalDateTime getFecha() {
         return this.fecha;
+    }
+
+    @Override
+    public int compareTo(PaqueteTuristico otro) {
+        return Double.compare(otro.precio, this.precio);
+    }
+
+    public double mostrarCalificacionPaquete(){
+        return (double) calificaciones.get("Calificaciones") /calificaciones.get("Cantidad de Calificaciones");
     }
 }

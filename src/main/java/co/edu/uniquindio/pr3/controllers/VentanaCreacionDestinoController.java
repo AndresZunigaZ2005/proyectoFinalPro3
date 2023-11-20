@@ -107,7 +107,7 @@ public class VentanaCreacionDestinoController implements Initializable {
             try {
                 File outputFile = new File(imagePath);
                 ImageIO.write(convertToBufferedImage(image), "png", outputFile);
-                imagePaths.add(outputFile.getAbsolutePath());
+                imagePaths.add(outputFile.getPath());
             } catch (IOException e) {
                 e.printStackTrace();
             }

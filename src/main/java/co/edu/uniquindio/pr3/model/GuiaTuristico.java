@@ -14,7 +14,7 @@ import java.util.HashMap;
 @EqualsAndHashCode
 @SuperBuilder
 
-public class GuiaTuristico extends Persona implements Serializable {
+public class GuiaTuristico extends Persona implements Serializable, Comparable<GuiaTuristico> {
 
     private int experiencia;
     private ArrayList<Lengua> listaLenguas;
@@ -33,5 +33,22 @@ public class GuiaTuristico extends Persona implements Serializable {
     @Override
     public String toString() {
         return super.toString();
+    }
+
+    public double mostrarCalificacion(){
+        if (calificacionesGuia.containsKey("sumaCalificaciones") && calificacionesGuia.containsKey("cantidadCalificaciones")) {
+            int suma = calificacionesGuia.get("sumaCalificaciones");
+            int cantidad = calificacionesGuia.get("cantidadCalificaciones");
+
+            if (cantidad != 0) {
+                return (double) suma / cantidad;
+            }
+        }
+        return 0.0;    }
+
+    @Override
+    public int compareTo(GuiaTuristico o) {
+        return Double.compare(o.mostrarCalificacion(), this.mostrarCalificacion());
+
     }
 }

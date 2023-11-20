@@ -84,9 +84,9 @@
                   <Label prefHeight="27.0" prefWidth="91.0" stylesheets="@style.css" text="Fecha:" />
                   <DatePicker fx:id="datePickerFecha" prefHeight="37.0" prefWidth="146.0" styleClass="date-picker" stylesheets="@style.css" />
                   <AnchorPane prefHeight="102.0" prefWidth="17.0" />
-                  <Spinner fx:id="spinnerHora" editable="true" prefHeight="25.0" prefWidth="72.0" stylesheets="@style.css" />
+                  <Spinner fx:id="spinnerHora" editable="true" prefHeight="35.0" prefWidth="70.0" />
                   <AnchorPane prefHeight="102.0" prefWidth="20.0" />
-                  <Spinner fx:id="spinnerMin" editable="true" prefHeight="25.0" prefWidth="65.0" stylesheets="@style.css" />
+                  <Spinner fx:id="spinnerMin" editable="true" prefHeight="34.0" prefWidth="64.0" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">

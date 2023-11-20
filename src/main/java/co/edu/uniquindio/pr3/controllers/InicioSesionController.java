@@ -58,13 +58,13 @@ public class InicioSesionController implements Initializable {
             ventanaPrincipalController.getBtnIniciarSesion().setVisible(false);
             ventanaPrincipalController.getBtnActualizarPerfil().setVisible(true);*/
             showAlert(Alert.AlertType.WARNING, prop.getProperty("information"), prop.getProperty("information"), "Bienvenido "+cliente.getNombre());
-        }else{
+        }else if(cliente == null){
             singletonController.setAdministrador(administrador);
             /*ventanaPrincipalController.getBtnCrearGuia().setVisible(true);
             ventanaPrincipalController.getBtnCrearDestinos().setVisible(true);
             ventanaPrincipalController.getBtnVerListaClientes().setVisible(true);
             ventanaPrincipalController.getBtnCrearPaquetes().setVisible(true);*/
-            showAlert(Alert.AlertType.WARNING, prop.getProperty("information"), prop.getProperty("information"), "Bienvenido "+administrador.getNombre());
+            showAlert(Alert.AlertType.INFORMATION, prop.getProperty("information"), prop.getProperty("information"), "Bienvenido "+administrador.getNombre());
         }
     }
 

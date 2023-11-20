@@ -42,6 +42,7 @@ public class VentanaVerDestinosController implements Initializable {
     @FXML
     private TextField txtFieldNombre;
 
+
     private AgenciaViajes agenciaViajes = AgenciaViajes.getInstance();
     private SingletonController singletonController = SingletonController.getInstance();
 
@@ -50,7 +51,7 @@ public class VentanaVerDestinosController implements Initializable {
     private Properties prop;
     private FileInputStream input;
 
-    private Destino destinoMostrar;
+    private Destino destinoMostrar = null;
 
     private int currentIndex = 0;
 
@@ -79,13 +80,16 @@ public class VentanaVerDestinosController implements Initializable {
     @FXML
     void showSelectedDestino(ActionEvent event) {
         destinoMostrar = agenciaViajes.obtenerDestino(comboBoxDestino.getValue(),0);
+        txtFieldNombre.setText(destinoMostrar.getNombre());
+        txtFieldCiudad.setText(destinoMostrar.getCiudad());
+        txtFieldClima.setText(destinoMostrar.getClima().toString());
         showImage();
     }
 
     private void showImage() {
         if (!destinoMostrar.getImagenes().isEmpty()) {
-            String imagePath = destinoMostrar.getImagenes().get(currentIndex);
-            Image image = new Image(getClass().getResourceAsStream(imagePath));
+            String imagePath = "file:"+destinoMostrar.getImagenes().get(currentIndex);
+            Image image = new Image((imagePath));
             imageViewFotosDestinos.setImage(image);
         }
     }

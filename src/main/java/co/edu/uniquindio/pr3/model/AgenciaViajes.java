@@ -195,6 +195,7 @@ public class AgenciaViajes {
             clienteActualizar.setCorreo(correo);
             clienteActualizar.setDireccion(direccion);
             clienteActualizar.setTelefono(telefono);
+            escribirClientes();
             LOGGER.log(Level.INFO, "Se ha actualizado el cliente de identificación "+identificacion);
         }
     }
@@ -261,6 +262,19 @@ public class AgenciaViajes {
         }
     }
 
+    public void actualizarDestino(String nombre,String ciudad, ArrayList<String> imagenes, Clima clima) throws DestinoVacioException, DestinoExisteException {
+        if(nombre == null || ciudad == null || nombre.isBlank() || ciudad.isBlank()){
+            throw new DestinoVacioException("El destino que usted desea agregar se añadio con vacios, por favor, ingrese los datos en todos los campos");
+        }else{
+            Destino destinoActualizar = obtenerDestino(nombre, 0);
+            destinoActualizar.setCiudad(ciudad);
+            destinoActualizar.setClima(clima);
+            destinoActualizar.setImagenes(imagenes);
+            LOGGER.log(Level.INFO, "El Destino "+ciudad+" se ha creado");
+            escribirDestinos();
+        }
+    }
+
     /*
     Metodos para la creacion de un paquete turistico
      */
@@ -319,6 +333,39 @@ public class AgenciaViajes {
             LOGGER.log(Level.INFO, "El paquete turistico "+nombre+" se ha creado");
             listaPaquetesTuristicos.add(p);
             escribirPaqueteTuristico();
+        }
+    }
+
+
+
+    /*
+    Metodo para ordenar la lista de menor a mayor y mayor a menor
+     */
+
+    public void ordernarListaPaquetesMenorMayor(){
+        Collections.sort(listaPaquetesTuristicos);
+    }
+
+    public void ordernarListaPaquetesMayorMenor(){
+        Collections.sort(listaPaquetesTuristicos, Collections.reverseOrder());
+    }
+
+    public ArrayList<PaqueteTuristico> mostrarPaquetesFechaDisponible(int i, ArrayList<PaqueteTuristico> p){
+        if(i == listaPaquetesTuristicos.size()) return p;
+        if(listaPaquetesTuristicos.get(i).getFecha().isAfter(LocalDateTime.now())){
+            p.add(listaPaquetesTuristicos.get(i));
+        }
+        return mostrarPaquetesFechaDisponible(i+1, p);
+    }
+
+    public void ponerEstadoReservaPasada(int i){
+        if(i == listaReservas.size()){
+
+        }else {
+            if (listaReservas.get(i).getPaqueteTuristico().getFecha().isBefore(LocalDateTime.now())) {
+                listaReservas.get(i).setEstadoReserva(EstadoReserva.PASADA);
+            }
+            ponerEstadoReservaPasada(i + 1);
         }
     }
 
@@ -423,6 +470,60 @@ public class AgenciaViajes {
         }
     }
 
+    public void actualizarGuiaTuristico(String nombre, String identificacion, int experciencia, ArrayList<Lengua> lenguas) throws GuiaTuristicoVacioException, GuiaTuristicoExisteException, IOException {
+        if(nombre == null || nombre.isBlank() || identificacion == null || identificacion.isBlank() ||
+                experciencia<0 || lenguas == null){
+            throw new GuiaTuristicoVacioException("El guía turistico que desea actualizar tiene tiene campos vacios, por favor rellene todos los espacios");
+        }
+        else{
+            GuiaTuristico guiaTuristico = obtenerGuiaTuristico(identificacion, 0);
+            guiaTuristico.setNombre(nombre);
+            guiaTuristico.setExperiencia(experciencia);
+            guiaTuristico.setListaLenguas(lenguas);
+            LOGGER.log(Level.INFO, "El Guia Turistico de identificación "+identificacion+" se ha registrado");
+            escribirGuiaTuristico();
+        }
+    }
+
+
+    public void ordenarGuiaCalificacionMayorMenor(){
+        Collections.sort(listaGuiasTuristicos);
+    }
+
+    public void ordenarGuiaMenorMayor() {
+        Collections.sort(listaGuiasTuristicos, Collections.reverseOrder());
+    }
+
+
+    public ArrayList<Destino> ordenarDestinosMasReservados(){
+        // Contar la cantidad de reservas para cada destino
+        Map<Destino, Integer> contadorDestinos = new HashMap<>();
+        for (Reserva reserva : listaReservas) {
+            for (Destino destino : reserva.getPaqueteTuristico().getListaDestinos()) {
+                contadorDestinos.put(destino, contadorDestinos.getOrDefault(destino, 0) + 1);
+            }
+        }
+
+        // Ordenar los destinos según la cantidad de reservas (en orden descendente)
+        ArrayList<Destino> destinosOrdenados = new ArrayList<>(contadorDestinos.keySet());
+        destinosOrdenados.sort((d1, d2) -> contadorDestinos.get(d2).compareTo(contadorDestinos.get(d1)));
+        return destinosOrdenados;
+    }
+
+
+    public void calificarPaquete(PaqueteTuristico paqueteTuristico, int calificacion){
+        HashMap<String, Integer> mapaNotas = paqueteTuristico.getCalificaciones();
+        mapaNotas.put("Calificaciones", mapaNotas.get("Calificaciones") + calificacion);
+        mapaNotas.put("Cantidad de Calificaciones", mapaNotas.get("Cantidad de Calificaciones")+1);
+        paqueteTuristico.setCalificaciones(mapaNotas);
+    }
+
+    public void calificarGuia(GuiaTuristico guiaTuristico, int calificacion){
+        HashMap<String, Integer> mapaNotas = guiaTuristico.getCalificacionesGuia();
+        mapaNotas.put("sumaCalificaciones", mapaNotas.get("sumaCalificaciones") + calificacion);
+        mapaNotas.put("cantidadCalificaciones", mapaNotas.get("cantidadCalificaciones")+1);
+        guiaTuristico.setCalificacionesGuia(mapaNotas);
+    }
 
     /**
      * Metodos del administrador
@@ -487,19 +588,6 @@ public class AgenciaViajes {
         }
     }
 
-    public void calificarPaquete(PaqueteTuristico paqueteTuristico, int calificacion){
-        HashMap<String, Integer> mapaNotas = paqueteTuristico.getCalificaciones();
-        mapaNotas.put("Calificaciones", mapaNotas.get("Calificaciones") + calificacion);
-        mapaNotas.put("Cantidad de Calificaciones", mapaNotas.get("Cantidad de Calificaciones")+1);
-        paqueteTuristico.setCalificaciones(mapaNotas);
-    }
-
-    public void calificarGuia(GuiaTuristico guiaTuristico, int calificacion){
-        HashMap<String, Integer> mapaNotas = guiaTuristico.getCalificacionesGuia();
-        mapaNotas.put("sumaCalificaciones", mapaNotas.get("sumaCalificaciones") + calificacion);
-        mapaNotas.put("cantidadCalificaciones", mapaNotas.get("cantidadCalificaciones")+1);
-        guiaTuristico.setCalificacionesGuia(mapaNotas);
-    }
     /**
      * leer datos
      */
@@ -523,6 +611,7 @@ public class AgenciaViajes {
     private void leerReserva(){
         try{
             this.listaReservas = (ArrayList<Reserva>)ArchivoUtils.deserializarObjeto(RUTA_RESERVAS);
+            ponerEstadoReservaPasada(0);
         } catch (IOException | ClassNotFoundException e) {
             LOGGER.log(Level.SEVERE, e.getMessage());
         }

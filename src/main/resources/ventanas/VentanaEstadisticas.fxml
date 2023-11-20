@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="437.0" prefWidth="627.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.pr3.controllers.VentanaEstadisticasController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="287.0" prefWidth="627.0">
+         <children>
+            <Label prefHeight="27.0" prefWidth="321.0" stylesheets="@style.css" text="Guias Mejor Puntuados" />
+            <Button fx:id="btnGenerarMejoresGuias" mnemonicParsing="false" onAction="#generarMejoresGuias" prefHeight="25.0" prefWidth="269.0" stylesheets="@style.css" text="Generar Excel" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="277.0" prefWidth="627.0">
+         <children>
+            <Label prefHeight="27.0" prefWidth="319.0" stylesheets="@style.css" text="Paquetes Turisticos Mejor Puntuados" />
+            <Button fx:id="btnGenerarMejoresPaquetes" mnemonicParsing="false" onAction="#generarMejoresPaquetes" prefHeight="25.0" prefWidth="269.0" stylesheets="@style.css" text="Generar Excel" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="315.0" prefWidth="627.0">
+         <children>
+            <Label prefHeight="27.0" prefWidth="319.0" stylesheets="@style.css" text="Destinos Más Reservados" />
+            <Button fx:id="btnGenerarDestinosReservados" mnemonicParsing="false" onAction="#generarDestinosReservados" prefHeight="25.0" prefWidth="269.0" stylesheets="@style.css" text="Generar Excel" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="109.0" prefWidth="627.0" />
+   </children>
+</VBox>

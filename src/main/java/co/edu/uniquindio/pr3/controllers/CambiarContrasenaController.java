@@ -48,7 +48,7 @@ public class CambiarContrasenaController implements Initializable {
             }
         }
         else{
-            showAlert(Alert.AlertType.INFORMATION, prop.getProperty("error"), prop.getProperty("error"), prop.getProperty("wrongCodeEmailPassword"));
+            showAlert(Alert.AlertType.ERROR, prop.getProperty("error"), prop.getProperty("error"), prop.getProperty("wrongCodeEmailPassword"));
         }
     }
 

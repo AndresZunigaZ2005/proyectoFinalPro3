@@ -85,11 +85,8 @@ public class VentanaMostrarReservasController implements Initializable {
         int rating = (int)sliderCalificarGuia.getValue();
         Reserva reservaSeleccionada = tableViewReserva.getSelectionModel().getSelectedItem();
         if(reservaSeleccionada!=null && reservaSeleccionada.getGuiaTuristico()!=null) {
-            int valorActual1 = reservaSeleccionada.getGuiaTuristico().getCalificacionesGuia().get("sumaCalificaciones");
-            reservaSeleccionada.getGuiaTuristico().getCalificacionesGuia().put("sumaCalificaciones" , valorActual1+rating);
-            int valorActual2 = reservaSeleccionada.getGuiaTuristico().getCalificacionesGuia().get("cantidadCalificaciones");
-            reservaSeleccionada.getGuiaTuristico().getCalificacionesGuia().put("cantidadCalificaciones" , valorActual2+1);
-            showAlert(Alert.AlertType.WARNING, prop.getProperty("information"), prop.getProperty("information"), "Gracias por calificar");
+            agenciaViajes.calificarGuia(reservaSeleccionada.getGuiaTuristico(), rating);
+            showAlert(Alert.AlertType.INFORMATION, prop.getProperty("information"), prop.getProperty("information"), "Gracias por calificar");
         }else{
             showAlert(Alert.AlertType.WARNING, prop.getProperty("warning"), prop.getProperty("warning"), "Seleccione una reserva");
         }
@@ -101,23 +98,11 @@ public class VentanaMostrarReservasController implements Initializable {
         Reserva reservaSeleccionada = tableViewReserva.getSelectionModel().getSelectedItem();
         if(reservaSeleccionada!=null) {
             agenciaViajes.calificarPaquete(reservaSeleccionada.getPaqueteTuristico(), rating);
-            showAlert(Alert.AlertType.WARNING, prop.getProperty("information"), prop.getProperty("information"), "Gracias por calificar");
+            System.out.println(reservaSeleccionada.getPaqueteTuristico().mostrarCalificacionPaquete());
+            showAlert(Alert.AlertType.INFORMATION, prop.getProperty("information"), prop.getProperty("information"), "Gracias por calificar");
         }else{
             showAlert(Alert.AlertType.WARNING, prop.getProperty("warning"), prop.getProperty("warning"), "Seleccione una reserva");
         }
-    }
-
-    public void calificiarGuia(){
-        sliderCalificarGuia.valueProperty().addListener((observable, oldValue, newValue) -> {
-
-        });
-    }
-
-    public void calificarPaquete(){
-        sliderCalificarPaquete.valueProperty().addListener((observable, oldValue, newValue) -> {
-
-        });
-
     }
 
     public void showAlert(Alert.AlertType alertType, String title, String header, String message) {

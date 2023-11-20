@@ -15,9 +15,7 @@ import lombok.SneakyThrows;
 
 import java.io.FileInputStream;
 import java.net.URL;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Properties;
 import java.util.ResourceBundle;
@@ -43,10 +41,10 @@ public class VentanaCreacionPaquetesController implements Initializable {
     private ListView<String> listViewDestinos;
 
     @FXML
-    private Spinner<Integer> spinnerHora;
+    private Spinner<Integer> spinnerHora = new Spinner<>();
 
     @FXML
-    private Spinner<Integer> spinnerMin;
+    private Spinner<Integer> spinnerMin = new Spinner<Integer>();
 
     @FXML
     private TextArea txtAreaServicios;
@@ -81,12 +79,13 @@ public class VentanaCreacionPaquetesController implements Initializable {
         double precio = Double.parseDouble(txtFieldPrecio.getText());
         int cupoMaximo = Integer.parseInt(txtFieldCupoMaximo.getText());
 
-        LocalDate selectedDate = datePickerFecha.getValue();
+        int year = datePickerFecha.getValue().getYear();
+        int month = datePickerFecha.getValue().getMonthValue();
+        int day = datePickerFecha.getValue().getDayOfMonth();
         int selectedHour = spinnerHora.getValue();
         int selectedMinute = spinnerMin.getValue();
-        LocalTime selectedTime = LocalTime.of(selectedHour, selectedMinute);
 
-        LocalDateTime fecha = LocalDateTime.of(selectedDate, selectedTime);
+        LocalDateTime fecha = LocalDateTime.of(year, month, day, selectedHour, selectedMinute);;
 
         try {
             agenciaViajes.crearPaqueteTuristico(nombre, duracion, servicios, precio, cupoMaximo, fecha, pasarStringDestino());
@@ -134,6 +133,14 @@ public class VentanaCreacionPaquetesController implements Initializable {
         input = new FileInputStream(RUTA_PROPIEDADES);
         prop.load(input);
 
+        // Configuración del Spinner para las horas
+        SpinnerValueFactory<Integer> hourFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 23);
+        spinnerHora.setValueFactory(hourFactory);
+
+        // Configuración del Spinner para los minutos
+        SpinnerValueFactory<Integer> minuteFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 59);
+        spinnerMin.setValueFactory(minuteFactory);
+
         Destino[] listaDestinosCombo = new Destino[agenciaViajes.getListaDestinos().size()];
         for (int i = 0; i < listaDestinosCombo.length; i++) {
             listaDestinosCombo[i] = agenciaViajes.getListaDestinos().get(i);
@@ -141,8 +148,7 @@ public class VentanaCreacionPaquetesController implements Initializable {
 
         comboBoxDestinos.getItems().addAll(listaDestinosCombo);
 
-        spinnerHora = new Spinner<Integer>(0, 24, 0);
-        spinnerMin = new Spinner<Integer>(0, 59, 0);
+
     }
 
     public void showAlert(Alert.AlertType alertType, String title, String header, String message) {

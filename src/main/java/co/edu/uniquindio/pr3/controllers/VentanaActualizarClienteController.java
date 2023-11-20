@@ -144,7 +144,7 @@ public class VentanaActualizarClienteController implements Initializable {
         txtFieldDireccion.setText(singletonController.getCliente().getDireccion());
         txtFieldTelefono.setText(singletonController.getCliente().getTelefono());
         txtFieldNombre.setText(singletonController.getCliente().getNombre());
-        Image image = new Image(new File("file:" + singletonController.getCliente().getImagen()).toURI().toString());
+        Image image = new Image("file:" + singletonController.getCliente().getImagen());
         imageViewPerfil.setImage(image);
     }
 }
