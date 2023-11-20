@@ -67,6 +67,9 @@ public class VentanaPrincipalController implements Initializable {
     private Button btnGraficas= new Button();
 
     @FXML
+    private Button btnCerrarSesion = new Button();
+
+    @FXML
     private VBox menu;
 
     @FXML
@@ -341,8 +344,22 @@ public class VentanaPrincipalController implements Initializable {
          }
     }
 
+    @FXML
+    void cambiarVentanaCerrarSesion(ActionEvent event){
+            try {
+                singletonController.setCliente(null);
+                singletonController.setAdministrador(null);
+                System.out.println("se presiono el boton");
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/ventanas/InicioSesion.fxml"));
+                Parent nuevaVentana = loader.load();
+                panelDinamico.setCenter(nuevaVentana);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+    }
+
     public boolean obtenerInstanciaCliente(){
-        if(singletonController.getCliente() == null){
+        if(singletonController.getCliente() == null && singletonController.getAdministrador() != null){
             return true;
         }
         else{
@@ -350,43 +367,14 @@ public class VentanaPrincipalController implements Initializable {
         }
     }
 
-    public Button getBtnIniciarSesion() {
-        return btnIniciarSesion;
+    public boolean obtenerInstanciaAdministrador(){
+        if(singletonController.getAdministrador() == null){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
-
-    public Button getBtnRegistroCliente() {
-        return btnRegistrarClientes;
-    }
-
-    public Button getBtnCrearDestinos() {
-        return btnCrearDestinos;
-    }
-
-    public Button getBtnCrearGuia() {
-        return btnCrearGuia;
-    }
-
-    public Button getBtnActualizarPerfil() {
-        return btnActualizarPerfil;
-    }
-
-    public Button getBtnVerDestinos() {
-        return btnVerDestinos;
-    }
-
-    public Button getBtnVerListaClientes() {
-        return btnVerListaClientes;
-    }
-
-    public Button getBtnCrearPaquetes() {
-        return btnCrearPaquetes;
-    }
-
-    public Button getBtnMostrarReservasCliente() {
-        return btnMostrarReservasCliente;
-    }
-
-    public Button getBtncambiarVentanaGraficas(){return btnGraficas;};
 
     public void showAlert(Alert.AlertType alertType, String title, String header, String message) {
         Alert alert = new Alert(alertType);
@@ -421,5 +409,60 @@ public class VentanaPrincipalController implements Initializable {
         createGuideButton.setSize("2em");
 
         btnCrearGuia.setGraphic(createGuideButton);
+
+        FontAwesomeIconView actPerfil = new FontAwesomeIconView(FontAwesomeIcon.USER);
+        actPerfil.setSize("2em");
+
+        btnActualizarPerfil.setGraphic(actPerfil);
+
+        FontAwesomeIconView verDestinosIcon = new FontAwesomeIconView(FontAwesomeIcon.SHOPPING_BAG);
+        verDestinosIcon.setSize("2em");
+
+        btnVerDestinos.setGraphic(verDestinosIcon);
+
+        FontAwesomeIconView verListaClientes = new FontAwesomeIconView(FontAwesomeIcon.DATABASE);
+        verListaClientes.setSize("2em");
+
+        btnVerListaClientes.setGraphic(verListaClientes);
+
+        FontAwesomeIconView crearPaquetes = new FontAwesomeIconView(FontAwesomeIcon.PLUS);
+        crearPaquetes.setSize("2em");
+
+        btnCrearPaquetes.setGraphic(crearPaquetes);
+
+        FontAwesomeIconView MostrarPaquetes = new FontAwesomeIconView(FontAwesomeIcon.SHOPPING_CART);
+        MostrarPaquetes.setSize("2em");
+
+        btnMostrarPaquetes.setGraphic(MostrarPaquetes);
+
+        FontAwesomeIconView verReservas = new FontAwesomeIconView(FontAwesomeIcon.CALENDAR);
+        verReservas.setSize("2em");
+
+        btnMostrarReservasCliente.setGraphic(verReservas);
+
+        FontAwesomeIconView mostrarEstadistica = new FontAwesomeIconView(FontAwesomeIcon.FILE_EXCEL_ALT);
+        mostrarEstadistica.setSize("2em");
+
+        btnMostrarEstadisticas.setGraphic(mostrarEstadistica);
+
+        FontAwesomeIconView actGuia = new FontAwesomeIconView(FontAwesomeIcon.USER_CIRCLE_ALT);
+        actGuia.setSize("2em");
+
+        btnActualizarGuia.setGraphic(actGuia);
+
+        FontAwesomeIconView actDestino = new FontAwesomeIconView(FontAwesomeIcon.RECYCLE);
+        actDestino.setSize("2em");
+
+        btnActualizarDestinos.setGraphic(actDestino);
+
+        FontAwesomeIconView verGraficas = new FontAwesomeIconView(FontAwesomeIcon.BAR_CHART);
+        verGraficas.setSize("2em");
+
+        btnGraficas.setGraphic(verGraficas);
+
+        FontAwesomeIconView cerrarSesion = new FontAwesomeIconView(FontAwesomeIcon.SIGN_OUT);
+        cerrarSesion.setSize("2em");
+
+        btnCerrarSesion.setGraphic(cerrarSesion);
     }
 }

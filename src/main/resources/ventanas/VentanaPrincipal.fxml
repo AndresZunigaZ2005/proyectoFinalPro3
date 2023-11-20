@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -17,18 +18,21 @@
                   <Button fx:id="button" mnemonicParsing="false" onAction="#desplegableEvent" style="-fx-border-radius: 5em; -fx-background-radius: 5em;" />
                   <Button fx:id="btnIniciarSesion" mnemonicParsing="false" onAction="#cambiarVentanaLogIn" />
                   <Button fx:id="btnRegistrarClientes" mnemonicParsing="false" onAction="#cambiarVentanaSingUp" />
-                  <Button fx:id="btnCrearDestinos" mnemonicParsing="false" onAction="#cambiarVentanaCreacionDestinos" />
+                  <Button fx:id="btnActualizarPerfil" mnemonicParsing="false" onAction="#cambiarVentanaActualizarPerfil" prefHeight="25.0" prefWidth="15.0" />
+                  <Button fx:id="btnVerDestinos" mnemonicParsing="false" onAction="#cambiarVentanaVerDestinos" />
+                  <Button fx:id="btnMostrarPaquetes" mnemonicParsing="false" onAction="#cambiarVentanaMostrarPaquetes" />
+                  <Button fx:id="btnMostrarReservasCliente" mnemonicParsing="false" onAction="#cambiarVentanaMostrarReservasCliente" />
+                  <AnchorPane prefHeight="30.0" prefWidth="216.0" />
                   <Button fx:id="btnCrearGuia" mnemonicParsing="false" onAction="#cambiarVentanaCreacionGuia" />
-                  <Button fx:id="btnActualizarPerfil" mnemonicParsing="false" onAction="#cambiarVentanaActualizarPerfil" text="Button" />
-                  <Button fx:id="btnVerDestinos" mnemonicParsing="false" onAction="#cambiarVentanaVerDestinos" text="Button" />
-                  <Button fx:id="btnVerListaClientes" mnemonicParsing="false" onAction="#cambiarVentanaVerListaClientes" text="Button" />
-                  <Button fx:id="btnCrearPaquetes" mnemonicParsing="false" onAction="#cambiarVentanaCrearPaquetes" text="Button" />
-                  <Button fx:id="btnMostrarPaquetes" mnemonicParsing="false" onAction="#cambiarVentanaMostrarPaquetes" text="Button" />
-                  <Button fx:id="btnMostrarReservasCliente" mnemonicParsing="false" onAction="#cambiarVentanaMostrarReservasCliente" text="Button" />
-                  <Button fx:id="btnMostrarEstadisticas" mnemonicParsing="false" onAction="#cambiarVentanaMostrarEstadisticas" text="Button" />
-                  <Button fx:id="btnActualizarGuia" mnemonicParsing="false" onAction="#cambiarVentanaActualizarGuia" text="Button" />
-                  <Button fx:id="btnActualizarDestinos" mnemonicParsing="false" onAction="#cambiarVentanaActualizarDestinos" text="Button" />
-                  <Button fx:id="btnGraficas" mnemonicParsing="false" onAction="#cambiarVentanaGraficas" text="Button" />
+                  <Button fx:id="btnActualizarGuia" mnemonicParsing="false" onAction="#cambiarVentanaActualizarGuia" prefHeight="25.0" prefWidth="11.0" />
+                  <Button fx:id="btnCrearDestinos" mnemonicParsing="false" onAction="#cambiarVentanaCreacionDestinos" />
+                  <Button fx:id="btnActualizarDestinos" mnemonicParsing="false" onAction="#cambiarVentanaActualizarDestinos" />
+                  <Button fx:id="btnVerListaClientes" mnemonicParsing="false" onAction="#cambiarVentanaVerListaClientes" />
+                  <Button fx:id="btnCrearPaquetes" mnemonicParsing="false" onAction="#cambiarVentanaCrearPaquetes" />
+                  <Button fx:id="btnGraficas" mnemonicParsing="false" onAction="#cambiarVentanaGraficas" />
+                  <Button fx:id="btnMostrarEstadisticas" mnemonicParsing="false" onAction="#cambiarVentanaMostrarEstadisticas" />
+                  <AnchorPane prefHeight="30.0" prefWidth="202.0" />
+                  <Button fx:id="btnCerrarSesion" mnemonicParsing="false" onAction="#cambiarVentanaCerrarSesion" />
                </children>
             </HBox>
          </children>

@@ -638,7 +638,7 @@ public class AgenciaViajes {
             while (scanner.hasNextLine()) {
                 String linea = scanner.nextLine();
                 String[] datos = linea.split(";");
-                if( datos.length == 6 ) {
+                if( datos.length == 3 ) {
                     this.listaAdministrador.add(new Administrador.AdministradorBuilder()
                             .nombre(datos[0])
                             .correo(datos[1])
