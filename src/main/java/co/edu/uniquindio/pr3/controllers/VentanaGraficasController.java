@@ -1,6 +1,8 @@
-package co.edu.uniquindio.pr3.model;
+package co.edu.uniquindio.pr3.controllers;
 
-import co.edu.uniquindio.pr3.controllers.SingletonController;
+import co.edu.uniquindio.pr3.model.AgenciaViajes;
+import co.edu.uniquindio.pr3.model.GuiaTuristico;
+import co.edu.uniquindio.pr3.model.PaqueteTuristico;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.*;

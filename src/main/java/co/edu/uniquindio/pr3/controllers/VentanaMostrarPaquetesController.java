@@ -68,6 +68,9 @@ public class VentanaMostrarPaquetesController implements Initializable {
     @FXML
     private ComboBox<Destino> comboBoxFiltroDestino;
 
+    @FXML
+    private Button btnEliminarFiltros;
+
     private AgenciaViajes agenciaViajes = AgenciaViajes.getInstance();
 
     private SingletonController singletonController = SingletonController.getInstance();
@@ -85,6 +88,8 @@ public class VentanaMostrarPaquetesController implements Initializable {
     private List<File> imagenes;
 
     private ObservableList<String> comboPredeterminado;
+
+    private ArrayList<PaqueteTuristico> listaSegunDestinos;
 
     private final String RUTA_PROPIEDADES = "src/main/resources/config/textos.properties";
 
@@ -133,6 +138,11 @@ public class VentanaMostrarPaquetesController implements Initializable {
         });
     }
 
+    @FXML
+    void eliminarFiltros(){
+        comboBoxPaquete.setItems(listaPaquetes);
+    }
+
 
     private void obtenerImagenes(Destino destino){
          File [] files = new File("src/main/resources/persistencia/FotosDestinos").listFiles();
@@ -170,29 +180,26 @@ public class VentanaMostrarPaquetesController implements Initializable {
     @FXML
     void filtrarPredeterminados(ActionEvent event){
         if (comboBoxFIltro.getValue().equals("Precio de mayor a menor")){
-            agenciaViajes.ordernarListaPaquetesMayorMenor();
-            ObservableList<PaqueteTuristico> p = FXCollections.observableArrayList(agenciaViajes.getListaPaquetesTuristicos());
+            ObservableList<PaqueteTuristico> p = FXCollections.observableArrayList(agenciaViajes.obtenerPaquetesOrdenadosRecursivos(false));
             comboBoxPaquete.setItems(p);
         }
-        else{
-            agenciaViajes.ordernarListaPaquetesMenorMayor();
-            ObservableList<PaqueteTuristico> p = FXCollections.observableArrayList(agenciaViajes.getListaPaquetesTuristicos());
+        else if(comboBoxFIltro.getValue().equals("Precio de menor a mayor")){
+            ObservableList<PaqueteTuristico> p = FXCollections.observableArrayList(agenciaViajes.obtenerPaquetesOrdenadosRecursivos(true));
+            comboBoxPaquete.setItems(p);
+        }
+        else if (comboBoxFIltro.getValue().equals("Paquetes Más Proximos")){
+            ObservableList<PaqueteTuristico> p = FXCollections.observableArrayList(agenciaViajes.obtenerPaquetesNoPasadosOrdenados());
             comboBoxPaquete.setItems(p);
         }
     }
 
     @FXML
     void filtrarDestinos(ActionEvent event){
-
+        Destino destinoBuscar = comboBoxFiltroDestino.getValue();
+        ObservableList<PaqueteTuristico> p = FXCollections.observableArrayList(agenciaViajes.obtenerPaquetesPorDestinoRecursivo(destinoBuscar));
+        comboBoxPaquete.setItems(p);
     }
 
-    private ObservableList<Destino> ponerDestinoPaquete(PaqueteTuristico paqueteTuristico, ObservableList<Destino> destinos, int i){
-        if(i == listaPaquetes.size()){
-            return destinos;
-        }
-        destinos.add(paqueteTuristico.getListaDestinos().get(i));
-        return ponerDestinoPaquete(paqueteTuristico, destinos, i+1);
-    }
 
     @FXML
     void crearReserva(ActionEvent event) {
@@ -241,6 +248,8 @@ public class VentanaMostrarPaquetesController implements Initializable {
             showAlert(Alert.AlertType.ERROR, prop.getProperty("information"), prop.getProperty("information"), "Inicie Sesion Primero");
         }
     }
+
+
     public void showAlert(Alert.AlertType alertType, String title, String header, String message) {
         Alert alert = new Alert(alertType);
         alert.setTitle(title);
@@ -255,20 +264,11 @@ public class VentanaMostrarPaquetesController implements Initializable {
         prop = new Properties();
         input = new FileInputStream(RUTA_PROPIEDADES);
         prop.load(input);
-        Slider slider = new Slider(0, 5, 2.5);
-        slider.setShowTickMarks(true);
-        slider.setMajorTickUnit(0.5);
-        slider.setMinorTickCount(0);
-        slider.setSnapToTicks(true);
 
-        slider.setMinWidth(300);
-        slider.setMaxWidth(300);
+        comboPredeterminado = FXCollections.observableArrayList("Precio de mayor a menor", "Precio de menor a mayor", "Paquetes Más Proximos");
 
-        slider.valueProperty().addListener((observable, oldValue, newValue) -> {
-            double roundedValue = Math.round(newValue.doubleValue() * 2) / 2.0;
-            slider.setValue(roundedValue);
-        });
-
+        // Asignar las opciones al ComboBox
+        comboBoxFIltro.setItems(comboPredeterminado);
 
         listaGuiasTuristicos = FXCollections.observableArrayList(agenciaViajes.getListaGuiasTuristicos());
         listaDestinosOriginal = FXCollections.observableArrayList(agenciaViajes.getListaDestinos());
@@ -279,8 +279,5 @@ public class VentanaMostrarPaquetesController implements Initializable {
         comboBoxPaquete.setItems(listaPaquetes);
         comboBoxFiltroDestino.setItems(listaDestinosOriginal);
         comboBoxSelectGuia.setItems(listaGuiasTuristicos);
-        comboBoxFIltro.setItems(comboPredeterminado);
-        comboPredeterminado = FXCollections.observableArrayList("Precio de mayor a menor", "Precio de menor a mayor");
     }
-
 }

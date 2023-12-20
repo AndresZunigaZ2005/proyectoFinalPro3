@@ -115,8 +115,14 @@ public class VentanaVerListaClientesController implements Initializable {
         // Limpiar la lista observable antes de agregar nuevos elementos
         listaClientes.clear();
 
-        // Agregar los clientes al TableView
-        listaClientes.addAll(agenciaViajes.getListaClientes());
-        tableViewClientes.setItems(listaClientes);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                // Agregar los clientes al TableView
+                listaClientes.addAll(agenciaViajes.getListaClientes());
+                tableViewClientes.setItems(listaClientes);
+            }
+        }).start();
+
     }
 }

@@ -130,9 +130,7 @@ public class RegistroClienteController implements Initializable {
                     // Manejar errores al guardar la imagen
                 }
             }
-            else{
-                showAlert(Alert.AlertType.WARNING, prop.getProperty("warning"), prop.getProperty("warning"), "Escoja una foto de perfil");
-            }
+            showAlert(Alert.AlertType.INFORMATION, prop.getProperty("information"), prop.getProperty("information"), "Gracias por Registrarse");
             nombreField.clear();
             identificacionField.clear();
             telefonoField.clear();

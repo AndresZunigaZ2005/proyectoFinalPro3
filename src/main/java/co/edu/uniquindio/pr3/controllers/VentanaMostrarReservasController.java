@@ -18,6 +18,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Properties;
 import java.util.ResourceBundle;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class VentanaMostrarReservasController implements Initializable {
 
@@ -82,10 +83,14 @@ public class VentanaMostrarReservasController implements Initializable {
 
     @FXML
     void calificacionGuia(MouseEvent event) {
-        int rating = (int)sliderCalificarGuia.getValue();
+        AtomicInteger rating = new AtomicInteger((int) sliderCalificarGuia.getValue());
+        sliderCalificarGuia.valueProperty().addListener((observable, oldValue, newValue) -> {
+            rating.set(newValue.intValue());
+        });
+        System.out.println(rating);
         Reserva reservaSeleccionada = tableViewReserva.getSelectionModel().getSelectedItem();
-        if(reservaSeleccionada!=null && reservaSeleccionada.getGuiaTuristico()!=null) {
-            agenciaViajes.calificarGuia(reservaSeleccionada.getGuiaTuristico(), rating);
+        if(reservaSeleccionada!=null && reservaSeleccionada.getGuiaTuristico()!=null && reservaSeleccionada.getEstadoReserva().equals(EstadoReserva.PASADA)) {
+            agenciaViajes.calificarGuia(reservaSeleccionada.getGuiaTuristico(), rating.get());
             showAlert(Alert.AlertType.INFORMATION, prop.getProperty("information"), prop.getProperty("information"), "Gracias por calificar");
         }else{
             showAlert(Alert.AlertType.WARNING, prop.getProperty("warning"), prop.getProperty("warning"), "Seleccione una reserva");
@@ -95,8 +100,9 @@ public class VentanaMostrarReservasController implements Initializable {
     @FXML
     void calificacionPaquete(MouseEvent event) {
         int rating = (int)sliderCalificarPaquete.getValue();
+        System.out.println(rating);
         Reserva reservaSeleccionada = tableViewReserva.getSelectionModel().getSelectedItem();
-        if(reservaSeleccionada!=null) {
+        if(reservaSeleccionada!=null && reservaSeleccionada.getEstadoReserva().equals(EstadoReserva.PASADA)) {
             agenciaViajes.calificarPaquete(reservaSeleccionada.getPaqueteTuristico(), rating);
             System.out.println(reservaSeleccionada.getPaqueteTuristico().mostrarCalificacionPaquete());
             showAlert(Alert.AlertType.INFORMATION, prop.getProperty("information"), prop.getProperty("information"), "Gracias por calificar");
@@ -119,23 +125,7 @@ public class VentanaMostrarReservasController implements Initializable {
         prop = new Properties();
         input = new FileInputStream(RUTA_PROPIEDADES);
         prop.load(input);
-        sliderCalificarPaquete = new Slider(1,5,1);
-        sliderCalificarGuia = new Slider(1,5,1);
         String imagePath = "/Imagenes/estrella.png"; // Ajusta la ruta según tu estructura de directorios
-
-        sliderCalificarPaquete = new Slider(0, 5, 1);
-        sliderCalificarPaquete.setShowTickLabels(true);
-        sliderCalificarPaquete.setShowTickMarks(true);
-        sliderCalificarPaquete.setMinorTickCount(0);
-        sliderCalificarPaquete.setMajorTickUnit(1);
-        sliderCalificarPaquete.setSnapToTicks(true);
-
-        sliderCalificarGuia = new Slider(0, 5, 1);
-        sliderCalificarGuia.setShowTickLabels(true);
-        sliderCalificarGuia.setShowTickMarks(true);
-        sliderCalificarGuia.setMinorTickCount(0);
-        sliderCalificarGuia.setMajorTickUnit(1);
-        sliderCalificarGuia.setSnapToTicks(true);
 
         fechaSolicitudColumn.setCellValueFactory(new PropertyValueFactory<>("fechaSolicitud"));
         fechaViajeColumn.setCellValueFactory(new PropertyValueFactory<>("fechaViaje"));

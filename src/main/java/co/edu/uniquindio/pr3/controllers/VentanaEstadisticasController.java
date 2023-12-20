@@ -205,7 +205,7 @@ public class VentanaEstadisticasController implements Initializable {
         agenciaViajes.ordenarGuiaCalificacionMayorMenor();
         listaOrdenadaCalificacionGuias = agenciaViajes.getListaGuiasTuristicos();
 
-        agenciaViajes.ordernarListaPaquetesMayorMenor();
+        agenciaViajes.obtenerPaquetesOrdenadosRecursivos(true);
         listaOrdenadaCalificacionPaquetes = agenciaViajes.getListaPaquetesTuristicos();
 
         listaDestinosMasReservados = agenciaViajes.ordenarDestinosMasReservados();

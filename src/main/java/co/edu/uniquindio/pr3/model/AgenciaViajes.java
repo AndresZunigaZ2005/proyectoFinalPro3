@@ -11,6 +11,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -337,18 +338,130 @@ public class AgenciaViajes {
     }
 
 
-
     /*
     Metodo para ordenar la lista de menor a mayor y mayor a menor
      */
 
-    public void ordernarListaPaquetesMenorMayor(){
-        Collections.sort(listaPaquetesTuristicos);
+    public ArrayList<PaqueteTuristico> obtenerPaquetesOrdenadosRecursivos(boolean ascendente) {
+        // Crear una copia de la lista original
+        ArrayList<PaqueteTuristico> copiaLista = new ArrayList<>(listaPaquetesTuristicos);
+
+        // Filtrar paquetes cuya fecha sea posterior a la fecha actual en la copia
+        copiaLista = filtrarPorFecha(copiaLista, LocalDateTime.now(), 0);
+
+        // Ordenar los paquetes filtrados por precio en la copia
+        ordenarPorPrecio(copiaLista, ascendente);
+
+        return copiaLista;
     }
 
-    public void ordernarListaPaquetesMayorMenor(){
-        Collections.sort(listaPaquetesTuristicos, Collections.reverseOrder());
+    private ArrayList<PaqueteTuristico> filtrarPorFecha(ArrayList<PaqueteTuristico> paquetes, LocalDateTime fechaActual, int index) {
+        if (index >= paquetes.size()) {
+            return new ArrayList<>();
+        }
+
+        PaqueteTuristico paqueteActual = paquetes.get(index);
+
+        // Verificar si la fecha del paquete actual es posterior a la fecha actual
+        if (paqueteActual.getFecha().isAfter(fechaActual)) {
+            // Agregar el paquete actual a la lista resultante
+            ArrayList<PaqueteTuristico> paquetesFiltradosRestantes = filtrarPorFecha(paquetes, fechaActual, index + 1);
+            paquetesFiltradosRestantes.add(0, paqueteActual);
+            return paquetesFiltradosRestantes;
+        } else {
+            // No agregar el paquete actual, continuar con el resto de la lista
+            return filtrarPorFecha(paquetes, fechaActual, index + 1);
+        }
     }
+
+    private void ordenarPorPrecio(List<PaqueteTuristico> paquetes, boolean ascendente) {
+        Comparator<PaqueteTuristico> comparador = Comparator.comparingDouble(PaqueteTuristico::getPrecio);
+
+        if (!ascendente) {
+            comparador = comparador.reversed();
+        }
+
+        Collections.sort(paquetes, comparador);
+    }
+
+
+
+
+    public ArrayList<PaqueteTuristico> obtenerPaquetesPorDestinoRecursivo(Destino destinoBuscado) {
+        ArrayList<PaqueteTuristico> paquetesConDestino = new ArrayList<>();
+        obtenerPaquetesPorDestinoRecursivoAux(destinoBuscado, 0, paquetesConDestino);
+        return paquetesConDestino;
+    }
+
+    private void obtenerPaquetesPorDestinoRecursivoAux(Destino destinoBuscado, int index, List<PaqueteTuristico> resultado) {
+        if (index >= listaPaquetesTuristicos.size()) {
+            return;
+        }
+
+        PaqueteTuristico paqueteActual = listaPaquetesTuristicos.get(index);
+
+        // Verificar si el destino buscado está presente en la lista de destinos del paquete
+        if (paqueteActual.getListaDestinos().contains(destinoBuscado)) {
+            resultado.add(paqueteActual);
+        }
+
+        // Continuar con el siguiente paquete
+        obtenerPaquetesPorDestinoRecursivoAux(destinoBuscado, index + 1, resultado);
+    }
+
+
+
+    public ArrayList<PaqueteTuristico> obtenerPaquetesNoPasadosOrdenados() {
+        // Crear una copia de la lista original
+        ArrayList<PaqueteTuristico> copiaLista = new ArrayList<>(listaPaquetesTuristicos);
+
+        // Filtrar paquetes cuya fecha de inicio no ha pasado en la copia
+        copiaLista = filtrarPaquetesNoPasados(copiaLista, LocalDateTime.now(), 0);
+
+        // Ordenar los paquetes filtrados por proximidad a la fecha actual en la copia
+        ordenarPorProximidad(copiaLista);
+
+        return copiaLista;
+    }
+
+    private ArrayList<PaqueteTuristico> filtrarPaquetesNoPasados(ArrayList<PaqueteTuristico> paquetes, LocalDateTime fechaActual, int index) {
+        if (index >= paquetes.size()) {
+            return new ArrayList<>();
+        }
+
+        PaqueteTuristico paqueteActual = paquetes.get(index);
+
+        // Verificar si la fecha del paquete actual no ha pasado
+        if (paqueteActual.getFecha().isAfter(fechaActual)) {
+            // Agregar el paquete actual a la lista resultante
+            ArrayList<PaqueteTuristico> paquetesFiltradosRestantes = filtrarPaquetesNoPasados(paquetes, fechaActual, index + 1);
+            paquetesFiltradosRestantes.add(0, paqueteActual);
+            return paquetesFiltradosRestantes;
+        } else {
+            // No agregar el paquete actual, continuar con el resto de la lista
+            return filtrarPaquetesNoPasados(paquetes, fechaActual, index + 1);
+        }
+    }
+
+    private void ordenarPorProximidad(ArrayList<PaqueteTuristico> paquetes) {
+        // Obtener la fecha actual
+        LocalDateTime fechaActual = LocalDateTime.now();
+
+        // Crear un comparador para ordenar por proximidad a la fecha actual
+        Comparator<PaqueteTuristico> comparador = Comparator.comparingLong(p ->
+                Math.abs(Duration.between(fechaActual, p.getFecha()).getSeconds())
+        );
+
+        // Ordenar la lista por proximidad
+        Collections.sort(paquetes, comparador);
+    }
+
+
+
+
+
+
+
 
     public ArrayList<PaqueteTuristico> mostrarPaquetesFechaDisponible(int i, ArrayList<PaqueteTuristico> p){
         if(i == listaPaquetesTuristicos.size()) return p;

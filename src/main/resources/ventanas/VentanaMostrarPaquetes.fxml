@@ -25,6 +25,7 @@
             <Label prefHeight="27.0" prefWidth="93.0" stylesheets="@style.css" text="Destinos:" />
             <ComboBox fx:id="comboBoxFiltroDestino" onAction="#filtrarDestinos" prefHeight="29.0" prefWidth="188.0" promptText="Seleccione un Destino" stylesheets="@style.css" />
             <AnchorPane prefHeight="69.0" prefWidth="33.0" />
+            <Button fx:id="btnEliminarFiltros" mnemonicParsing="false" onAction="#eliminarFiltros" prefHeight="39.0" prefWidth="161.0" stylesheets="@style.css" text="Eliminar Filtros" />
          </children>
       </HBox>
    </top>

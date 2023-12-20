@@ -44,6 +44,7 @@ public class CambiarContrasenaController implements Initializable {
             }
             else{
                 cliente.setContrasenia(nuevaContrasena);
+                agenciaViajes.escribirClientes();
                 showAlert(Alert.AlertType.INFORMATION, prop.getProperty("information"), prop.getProperty("information"), prop.getProperty("passwordChangedSuccessfully"));
             }
         }
